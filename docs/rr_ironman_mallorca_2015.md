@@ -42,3 +42,5 @@ Thank you,
 PJ
 
 PS! Please save the wales, too!”
+
+!["i mål"](../pics/im_mallorca.jpg)
