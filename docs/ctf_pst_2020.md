@@ -1498,7 +1498,7 @@ Den lot seg avlese til `PST{4ll_th3s3_d3l1c10us_l4y3rs}`.
 
 Installering av tjenestepakken krevde gjentatte tastetrykk på en knapp. Eventuelt ta opp konsollet i [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools):
 ```
-document.getElementsByTagName('button')[4].click();document.getElementsByClassName('md svelte-9n8vp1')[0]
+var i;for (i=0; i<100; i++) {document.getElementsByTagName('button')[4].click();}
 ```
 
 Etter installering av den nevnte tjenestepakken, dukket menyvalget "Sledesimulator" opp. Det var en variant av det klassiske [Lunar Lander](https://en.wikipedia.org/wiki/Lunar_Lander_(1979_video_game))-spillet. Istedenfor å lande et romskip på månen, skulle man lande nissen på ei pipe. Verktøyene man hadde tilgjengelige var en mulighet for å "laste inn fastvare", nevnte Chrome DevTools og en "Sledesimulatorspesifikasjon":
