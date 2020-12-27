@@ -63,7 +63,7 @@ Som den snikende alvebetjenten jeg nå var, snek jeg meg hjem igjen og latet som
 | [1 - Cæsarchiffer](#1---cæsarchiffer) | [2 - Lydfil](#2---lydfil) |
 | [3 - Steganografi](#3---steganografi) | [4 - SQL](#4---sql) |
 | [5 - CSV og UTF-16](#5---csv-og-utf-16) | [6 - SLEDE8, intro](#6---slede8-intro) |
-| [7 - EBCDIC](#7---signal) | [8 - ASN.1, del 1](#8---asn1-del-1) |
+| [7 - Signal](#7---signal) | [8 - ASN.1, del 1](#8---asn1-del-1) |
 | [9 - Emojis](#9---emojis) | [10 - SLEDE8, hex til ASCII](#10---slede8-hex-til-ascii) |
 | [11 - SQLite og WAL-filer](#11---sqlite-og-wal-filer) | [12 - SLEDE8, reversing](#12---slede8-reversing) |
 | [13 - ASCII-art](#13---ascii-art) | [14 - SLEDE8, rekkefølge](#14---slede8-rekkefølge) |
@@ -780,10 +780,10 @@ Jeg klonet [github-repoet](https://github.com/PSTNorge/slede8) og begynte å kik
 Det viste seg i `runtime.ts` at metoden `load()` lastet den binære fila inn i minnet, og at den sjekket for `magic` som var `.SLEDE8` i starten på fila. Alt etter `.SLEDE8` kunne kjøres rett inn i SLEDE8 som `.DATA`, slik
 
 ```
-.DATA 81, 0, 97, 1, 161, 0, 177, 1, 193, 0, 131, 3, 145, 26, 6, 2, 4, 3, 114, 5, 85, 103, 37, 114, 37, 50, 21, 44, 82, 6, 98, 7
-.DATA 101, 185, 85, 176, 23, 169, 233, 0, 7, 172, 41, 3, 179, 5, 26, 6, 0, 0, 35, 5, 26, 6, 0, 0, 81, 81, 87, 126, 110, 100, 119, 18
-.DATA 89, 56, 243, 138, 72, 61, 235, 83, 125, 33, 92, 175, 28, 174, 80, 37, 85, 63, 75, 111, 114, 114, 101, 107, 116, 33, 0, 70, 101, 105, 108, 33
-.DATA 0, 4, 2, 7, 162, 217, 6, 22, 2, 85, 176, 24, 6, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+.DATA 81,0,97,1,161,0,177,1,193,0,131,3,145,26,6,2,4,3,114,5,85,103,37,114,37,50,21,44,82,6,98,7
+.DATA 101,185,85,176,23,169,233,0,7,172,41,3,179,5,26,6,0,0,35,5,26,6,0,0,81,81,87,126,110,100,119,18
+.DATA 89,56,243,138,72,61,235,83,125,33,92,175,28,174,80,37,85,63,75,111,114,114,101,107,116,33,0,70,101,105,108,33
+.DATA 0,4,2,7,162,217,6,22,2,85,176,24,6,11,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 ```
 
 Kjørte programmet i SLEDE8 med diverse føde, som alle ga oppgulp `Feil!`. Det var åpenbart at riktig føde ville gi oppgulp `Korrekt!`, men hva var riktig føde? Begynte å debugge `step()`-metoden som inneholdt alt som var av interesse. Det skjedde mye med registerne, og jeg forsøkte først å disassemble SLEDE8-koden. Endte opp med
