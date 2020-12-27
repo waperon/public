@@ -1497,8 +1497,8 @@ Den lot seg avlese til `PST{4ll_th3s3_d3l1c10us_l4y3rs}`.
 > Autopiloten er tilstandsløs. Den leser inn relevante posisjoner som føde, og gir fornuftig oppgulp. Dokumentasjon på disse er tilgjengelig i simulatoren. Oppgaven er enkel å grei: Bestem hvilke av de tre motorene, om noen, som skal være aktive basert på forrige og nåværende posisjon. Eneste man må tenke på er at man må lande mykt nok, samt treffe målet, slik at NISSEN kommer seg uskadet fra landingen. Kunne gjort dette i en håndvending selv, men er dessverre opptatt med å spise pepperkaker.
 
 Installering av tjenestepakken krevde gjentatte tastetrykk på en knapp. Eventuelt ta opp konsollet i [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools):
-```
-var i;for (i=0; i<100; i++) {document.getElementsByTagName('button')[4].click();}
+```javascript
+var i;for (i=0; i<50; i++) {document.getElementsByTagName('button')[4].click();}
 ```
 
 Etter installering av den nevnte tjenestepakken, dukket menyvalget "Sledesimulator" opp. Det var en variant av det klassiske [Lunar Lander](https://en.wikipedia.org/wiki/Lunar_Lander_(1979_video_game))-spillet. Istedenfor å lande et romskip på månen, skulle man lande nissen på ei pipe. Verktøyene man hadde tilgjengelige var en mulighet for å "laste inn fastvare", nevnte Chrome DevTools og en "Sledesimulatorspesifikasjon":
