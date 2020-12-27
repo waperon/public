@@ -1721,18 +1721,20 @@ SKRIV r11; 1
 RETUR
 ```
 
+Dette ga en glad nisse som landet trygt på pipa. Julen var reddet!
+
 !["simulator"](../pics/pst_24_simulator.png)
 
 Trykket man på `Redd julen` ble det tydeligvis kjørt noen tester på inngangsverdier i bakkant, og når disse kjørte ok, ble man belønnet med følgende melding
 
 !["redd julen"](../pics/pst_24_redd_jula.png)
 
-Fulgte man URL'en, kom man til en glorete side [Arngren](http://arngren.net/) hadde blitt stolt av og som sa "Gratulerer, du reddet julen! PST{MerryChristmasYaFilthyAlgorithm}".
+Fulgte man URL'en, kom man til en glorete side [Arngren](http://arngren.net/) hadde blitt stolt av og som sa "Gratulerer, du reddet julen! PST{MerryChristmasYaFilthyAlgorithm}". Sjelden har jeg lest noen sannere ord.
 
 **Løsning: PST{MerryChristmasYaFilthyAlgorithm}**
 
 ## Eggelikør
-Etter å ha klart luke 24, kom det en melding fra Mellomleder:   
+Etter å ha klart luke 24, kom det en melding fra `Mellomleder`:   
 > PS: Det er totalt mulig å få 11 utmerkelser.
 
 Javel, da var det bare å begynne å lete. Det skulle ikke mye fantasi til for å tenke seg at egget befant seg bak [egg.spst.no](https://egg.spst.no/). Siden utmerkelse #10 kom i luke 16, var det nærliggende å tro at det måtte ligge noen hint i luke 17-23. Samtalen fra luke 17 var interessant:
@@ -1745,7 +1747,7 @@ fromTarget : Bra det ble sladdet
 toTarget : jeger2
 ```
 
-Prøvde først `jeger2`, som ikke funket. Men `****************` funket fint og man ble videresendt til https://egg.spst.no/c9ac37f8b4a4d689456d756485428522/. Der stod egget i klartekst.
+Prøvde først `jeger2` som passord på [egg.spst.no](https://egg.spst.no/). Det funket ikke. Men `****************` funket fint og man ble videresendt til https://egg.spst.no/c9ac37f8b4a4d689456d756485428522/. Der stod egget i klartekst.
 
 **Utmerkelse #11: EGG{AllIWantForChristmasIsPfeffErminZ}**
 
