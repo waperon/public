@@ -56,14 +56,14 @@ Whaat!? Det måtte være noe feil? Hadde jeg bommet på tallene? Desperat forsø
 
 Som den snikende alvebetjenten jeg nå var, snek jeg meg hjem igjen og latet som ingenting. Akkurat den strategien var vellykket og jeg gled helt ubemerket inn i familielykken igjen og sa noen velvalgte ord om at Alex Rosén var veldig flink til å synge i Stjernekamp. For andre gang på en times tid sluttet mistenkelige typer å snakke rundt meg og jeg gikk og la meg og gråt meg i søvn.
 
-# Innholdsfortegnelse
+# Luker
 
-| Luker | |
+| Odd | Even |
 | --- | --- |
 | [1 - Cæsarchiffer](#1---cæsarchiffer) | [2 - Lydfil](#2---lydfil) |
 | [3 - Steganografi](#3---steganografi) | [4 - SQL](#4---sql) |
 | [5 - CSV og UTF-16](#5---csv-og-utf-16) | [6 - SLEDE8, intro](#6---slede8-intro) |
-| [7 - EBCDIC](#7---ebcdic) | [8 - ASN.1, del 1](#8---asn1-del-1) |
+| [7 - EBCDIC](#7---signal) | [8 - ASN.1, del 1](#8---asn1-del-1) |
 | [9 - Emojis](#9---emojis) | [10 - SLEDE8, hex til ASCII](#10---slede8-hex-til-ascii) |
 | [11 - SQLite og WAL-filer](#11---sqlite-og-wal-filer) | [12 - SLEDE8, reversing](#12---slede8-reversing) |
 | [13 - ASCII-art](#13---ascii-art) | [14 - SLEDE8, rekkefølge](#14---slede8-rekkefølge) |
@@ -195,7 +195,7 @@ Lastet opp cupcake.png til https://stylesuxx.github.io/steganography/, som ga hi
 ```
 🛷🛷🛷🛷🛷🛷🛷🛷 N4Igzg9grgTgxgUwMIQCYJALhAZQKIAqBABDAIwA0xADAB5kA6AdgGo4DSAkgGInlXlm+IqWpUAbAE4h7AEqcWo5gAkA8gAV1NWgCYEzZgAsAtsczMAdABEAggRvaALI4p1xAVle0ECLwA4Adi8AI3F-MTpUSjpHXzoAQy9HRMiAMy9JVMtbe214iNp3VC8AnS94sro-AGYMuNpJTzoEJtpUAtQwhJSGnWy7BzoA+tS4ENq6auCQ9Lp3aO9phPqEYqrK+jG6HUcDJnUAGQBVHBxRAUYmDnlFGGoZG6Urwj4xbQDgh4UngiPZYjAAE9UAAHCAAGwQTGYhxOZzuFy+t3u0KuBA06j2QNBEKh5meInILiewj4ZE8pEuzG4nAAcrTiCZjMwABp4A4HPD-GBlUh9Al8Cl0KlMCDGADWADdVvjOfDqswDjYcHxdkw2RyuaRaqQ1YrOOw+QIFUwAEJqTTEMFgAAu4KgqAAllBmVc5N8YCbYadzqR3CoMcQxVLVntrXaHc6zEIXr6iTHCZRKf6mLJCH89swQBQQI6mCCoDasCAyKVJPFgnBqqkpn5JI5quJxMEdAF4qka3B5sEyKh2u1EHBm2RJJJgn50KkAtQ4JIdKgdO5hhUdH4fGQaj4PDsQABfIA
 ```
-Innholdet ga mening først etter luke 6 da man hadde fått en introduksjon til Slede8. Deretter var det bare å lime inn innholdet i URL'en: [https://https://slede8.npst.no/#N4Igzg9grg...](https://slede8.npst.no/#N4Igzg9grgTgxgUwMIQCYJALhAZQKIAqBABDAIwA0xADAB5kA6AdgGo4DSAkgGInlXlm+IqWpUAbAE4h7AEqcWo5gAkA8gAV1NWgCYEzZgAsAtsczMAdABEAggRvaALI4p1xAVle0ECLwA4Adi8AI3F-MTpUSjpHXzoAQy9HRMiAMy9JVMtbe214iNp3VC8AnS94sro-AGYMuNpJTzoEJtpUAtQwhJSGnWy7BzoA+tS4ENq6auCQ9Lp3aO9phPqEYqrK+jG6HUcDJnUAGQBVHBxRAUYmDnlFGGoZG6Urwj4xbQDgh4UngiPZYjAAE9UAAHCAAGwQTGYhxOZzuFy+t3u0KuBA06j2QNBEKh5meInILiewj4ZE8pEuzG4nAAcrTiCZjMwABp4A4HPD-GBlUh9Al8Cl0KlMCDGADWADdVvjOfDqswDjYcHxdkw2RyuaRaqQ1YrOOw+QIFUwAEJqTTEMFgAAu4KgqAAllBmVc5N8YCbYadzqR3CoMcQxVLVntrXaHc6zEIXr6iTHCZRKf6mLJCH89swQBQQI6mCCoDasCAyKVJPFgnBqqkpn5JI5quJxMEdAF4qka3B5sEyKh2u1EHBm2RJJJgn50KkAtQ4JIdKgdO5hhUdH4fGQaj4PDsQABfIA)
+Innholdet ga mening først etter luke 6 da man hadde fått en introduksjon til SLEDE8. Deretter var det bare å lime inn innholdet i URL'en: [https://https://slede8.npst.no/#N4Igzg9grg...](https://slede8.npst.no/#N4Igzg9grgTgxgUwMIQCYJALhAZQKIAqBABDAIwA0xADAB5kA6AdgGo4DSAkgGInlXlm+IqWpUAbAE4h7AEqcWo5gAkA8gAV1NWgCYEzZgAsAtsczMAdABEAggRvaALI4p1xAVle0ECLwA4Adi8AI3F-MTpUSjpHXzoAQy9HRMiAMy9JVMtbe214iNp3VC8AnS94sro-AGYMuNpJTzoEJtpUAtQwhJSGnWy7BzoA+tS4ENq6auCQ9Lp3aO9phPqEYqrK+jG6HUcDJnUAGQBVHBxRAUYmDnlFGGoZG6Urwj4xbQDgh4UngiPZYjAAE9UAAHCAAGwQTGYhxOZzuFy+t3u0KuBA06j2QNBEKh5meInILiewj4ZE8pEuzG4nAAcrTiCZjMwABp4A4HPD-GBlUh9Al8Cl0KlMCDGADWADdVvjOfDqswDjYcHxdkw2RyuaRaqQ1YrOOw+QIFUwAEJqTTEMFgAAu4KgqAAllBmVc5N8YCbYadzqR3CoMcQxVLVntrXaHc6zEIXr6iTHCZRKf6mLJCH89swQBQQI6mCCoDasCAyKVJPFgnBqqkpn5JI5quJxMEdAF4qka3B5sEyKh2u1EHBm2RJJJgn50KkAtQ4JIdKgdO5hhUdH4fGQaj4PDsQABfIA)
 
 Når man kjørte programmet, ble egget gulpet opp.  
 
@@ -352,10 +352,10 @@ STOPP
 
 **Utmerkelse #5: EGG{Hello, SLEDE8!}**
 
-# 7 - EBCDIC
+# 7 - Signal
 > Det har blitt fanget opp et rart signal her på julenissens verksted. Det ser ikke ut til at det er et kontinuerlig signal, da det ser til å komme og gå litt. Klarer du å finne ut hva det er?
 
-Utdelt var en fil, `data.complex16u`, som hadde [EBCDIC](https://en.wikipedia.org/wiki/EBCDIC)-data i seg. 
+Utdelt var en fil, `data.complex16u`, som hadde `file`-kommandoen sa hadde [EBCDIC](https://en.wikipedia.org/wiki/EBCDIC)-data i seg. 
 ```bash
 file data.complex16u
 data.complex16u: International EBCDIC text, with very long lines, with no line terminators
@@ -462,11 +462,11 @@ print(recurse(decoded, ''))
 ```
 0123456789ABCDEF1F8B0800F149CE5F02FF0B080EA9FE307FF94E08EE6B01E25608BD7C672D00124DC95F1D000000
 ```
-Fjernet man starten og slutten, satt vi igjen med
+Fjernet man starten og slutten, satt man igjen med
 ```
 1F8B0800F149CE5F02FF0B080EA9FE307FF94E08EE6B01E25608BD7C672D00124DC95F1D
 ```
-Googler man `1F8B08` ser man at det er filsignaturen for gzip. Med Python løses det slik:
+Googler man `1F8B08` ser man at det er filsignaturen for gzip. Med Python kan det løses slik:
 
 ```Python
 import gzip
@@ -513,7 +513,7 @@ var i;for (i=0; i<50; i++) {document.getElementsByTagName('button')[3].click();}
 Når tjenestepakken var installert, dukket det opp et nytt verktøy, "Mal": 
 !["mal"](../pics/pst_9_mal.png)
 
-Fra `Hjelp`-menyen kunne man velge `Åpne Mal 3D (x86)`. Der kom man til en blåskjerm med noen assembly-instruksjoner
+Fra `Hjelp`-menyen kunne man velge `Åpne Mal 3D (x86)`. Der kom man til en [blåskjerm](https://en.wikipedia.org/wiki/Blue_screen_of_death) med noen assembly-instruksjoner
 ```
 inc ebp
 inc edi
@@ -752,7 +752,7 @@ STOPP
 # 11 - SQLite og WAL-filer
 > Det interne sikkerhetsteamet hos NPST har oppdaget at det har skjedd en uautorisert modifikasjon på Nissens liste over snille og slemme barn. De påstår at en md5-sum har blitt endret på, men de trenger din hjelp til å finne ut nøyaktig hvilken. Vedlagt ligger en sikkerhetskopi med nissens liste fra det tidspunktet sikkerhetsteamet mener modifikasjonen har oppstått.
 
-Utdelt var en [SQLite](https://www.sqlite.org/index.html)-database, `liste.db`. Sammen med denne, kom en [wal-fil](https://sqlite.org/wal.html). En wal-fil er en "write-ahead log" som håndterer commit og rollback, et mellomlagringssteg før data enten blir skrevet til databasen, eller rullet tilbake. 
+Utdelt var en [SQLite](https://www.sqlite.org/index.html)-database, `liste.db`. Sammen med denne, kom en [wal-fil](https://sqlite.org/wal.html). En wal-fil er en "write-ahead log" som håndterer commit og rollback; et mellomlagringssteg før data enten blir skrevet til databasen, eller rullet tilbake. 
 
 Siden [Sanderson Forensics-verktøyene](https://sqliteforensictoolkit.com/) er lisensbelagt, måtte det en del manuell behandling til. Kopierte `liste.db` til `liste_uten_wal.db` og åpnet denne i [SQLite Browser](https://sqlitebrowser.org/). Kopierte innholdet og limte det inn i Excel (kremt...). Åpnet deretter `liste.db` med den aktive wal-fila og kopierte også innholdet inn i samme Excel-regneark. Fikk Excel til å "Remove Duplicates", som da viste at det var pluss ett innslag i `snille`-listen. Sorterte listen på navn og fant ut hvilket navn som hadde to forekomster i listen. Det var `Agnes Brekke 49422712408d5409a3e40945204314e6`. Dette var da flagget.
 
@@ -868,7 +868,7 @@ Dersom man myste godt på den tekstfila som var vedlagt, kunne man ane bokstaver
 # 14 - SLEDE8, rekkefølge
 > Det nyeste innen måltallsrapportering er antall fullførte e-læringsmoduler i SLEDE8 blandt de ansatte, så kunne du gjennomført modul 97672649875ca349? Rapporter tilbake som vanlig når du er ferdig!
 
-Nok en SLEDE8 oppgave. Her gjaldt det å holde tunga rett i munnen når man lagret verdier til registre. En adresse lagres over to registre, `r0` og `r1`. Der `r1` har den mest signifikante biten. Det tok tid å komme seg forbi alle testene på serveren, spesielt test 6. Siden man ikke visste hva test 6 var, måtte man bare prøve seg fram. Viste seg at versjon 1 av mitt program ikke klarte å håndtere føde > 512 tegn. Grunnen til det var at jeg i utgangspunktet hadde en teller som telte antall lagringer, og en teller som telte antall utskrifter. Når disse var like, var programmet ferdig. Problemet var at disse verdiene ble lagret i et register som bestod av 1 byte, og kunne således kun telle opp til 255. Ved å sette første byte i `.DATA 0x00` og sjekke på det når man telte ned igjen, kom man i mål.
+Nok en SLEDE8 oppgave. Her gjaldt det å holde tunga rett i munnen når man lagret verdier til registre. En adresse lagres over to registre, `r0` og `r1`. Der `r1` har den mest signifikante biten. Det tok tid å komme seg forbi alle testene på serveren, spesielt test 6. Siden man ikke visste hva test 6 var, måtte man bare prøve seg fram. Viste seg at versjon 1 av mitt program ikke klarte å håndtere føde > 512 tegn. Grunnen til det var at jeg i utgangspunktet hadde en teller som telte antall lagringer, og en teller som telte antall utskrifter. Når disse var like, var programmet ferdig. Problemet var at disse verdiene ble lagret i et register som bestod av 1 byte, og kunne således kun telle opp til 255. Ved heller å sette første byte i `.DATA 0x00` og sjekke på det når man telte ned igjen, kom man i mål.
 ```
 ; Føde består av et ukjent antall verdier, der verdien 0x00 markerer siste verdi.
 ; Skriv ut verdiene i motsatt rekkefølge.
@@ -1015,7 +1015,7 @@ STOPP
 **Løsning: PST{youtu.be/k4RRi_ntQc8}**
 
 ## Eggedal
-Egget var selvsagt samme oppgave, men man fikk bare bruke 4608 sykler. Litt tungt, når bubble sort fra oppgaven brukte nesten 897.000 sykler. Så måtte tenke helt nytt. Etter noen hint her og der, viste det seg at den beste løsningen var å bruke minnet som en map, der adressen er en `key` og antall forekomster er `value`. Om man begynner på adressen `0x00` og steger oppover, har man lista automatisk sortert også. Funker siden det er maks `0xFF` forekomster i lista. Første implementasjon krevde ca. 6900 sykler. Etter gradvis optimalisering og omveltning av logikk (f.eks. bytte `LIK` til `ULIK`), klarte koden å kjøre på under det påkrevde antall sykler.
+Egget var selvsagt samme oppgave, men man fikk bare bruke 4608 sykler. Litt tungt, når bubble sort fra oppgaven over brukte nesten 897.000 sykler. Så måtte tenke helt nytt. Etter noen hint her og der, viste det seg at den beste løsningen var å bruke minnet som en map, der adressen er en `key` og antall forekomster er `value`. Om man begynner på adressen `0x00` og steger oppover, har man lista automatisk sortert også. Funker siden det er maks `0xFF` forekomster i lista. Første implementasjon krevde ca. 6900 sykler. Etter gradvis optimalisering og omveltning av logikk (f.eks. bytte `LIK` til `ULIK`), klarte koden å kjøre på under det påkrevde antall sykler.
 
 ```
 ; Første byte med føde er et tall N som representerer
@@ -1200,7 +1200,7 @@ toTarget : WIN! Takk.
 fromTarget : Under og inn.
 ```
 
-Etter å ha lest og forstått den teksten, kunne man gjøre følgende i en terminal i din umiddelbare nærhet:
+Etter å ha lest og forstått den teksten, kunne man gjøre følgende i en terminal i en umiddelbar nærhet:
 
 ```bash
 $ md5 -s c9c36ccf-6a38-4281-b48f-d14db694d4a3
@@ -1352,7 +1352,7 @@ $ file file2
 file2: pcapng capture file - version 1.0
 ```
 
-Fikk også et hint der at det var noen byte i starten som kunne være av interesse. Etter litt prøving og feiling, fant jeg riktig start og slutt på `file1`. Det kunne virke som om file1 var base64-enkodet, så dekodet den i samme slengen
+Fikk altså et hint der om at det var noen byte i starten som kunne være av interesse. Etter litt prøving og feiling, fant jeg riktig start og slutt på `file1`. Det kunne virke som om file1 var base64-enkodet, så dekodet den i samme slengen
 
 ```bash
 $ dd if='PyPwg==' of=file1 bs=1 skip=156 count=9030
@@ -1436,7 +1436,7 @@ fun main() {
 }
 ```
 
-To filer med [NumPy](https://numpy.org/)-data, som tydeligvis er et Python-bibliotek for numeriske analyser. _Sidespor_ fra teksten refererer til [Side-channel attack](https://en.wikipedia.org/wiki/Side-channel_attack), så tanken er å bruke strømforbruket som en side-channel attack for å få fram nøkkelen. Og da kunne jeg google meg fram til [Power analysis](https://en.wikipedia.org/wiki/Power_analysis). Her var det mange kaninhull å falle ned i. Hva var sammenhengen mellom de 50 ønskelistene og strømforbruket? Ønskelistene hadde verdier 0-255, dvs. en byte. Strømforbruket hadde oscillerende verdier. Plottet man sending av en ønskeliste opp mot tilsvarende strømforbruk, fikk man bilder ala denne mha. [matplotlib](https://matplotlib.org/tutorials/introductory/pyplot.html) og NumPy. 
+To filer med [NumPy](https://numpy.org/)-data, som tydeligvis er et Python-bibliotek for numeriske analyser. _Sidespor_ fra teksten refererer til [Side-channel attack](https://en.wikipedia.org/wiki/Side-channel_attack), så tanken er å bruke strømforbruket som en side-channel attack for å få fram nøkkelen. Og da kunne jeg google meg fram til [Power analysis](https://en.wikipedia.org/wiki/Power_analysis). Her var det mange kaninhull å falle ned i. Hva var sammenhengen mellom de 50 ønskelistene og strømforbruket? Ønskelistene hadde verdier 0-255, dvs. en byte. Strømforbruket hadde oscillerende verdier. Plottet man sending av en ønskeliste opp mot tilsvarende strømforbruk, fikk man bilder ala denne med hjelp av [matplotlib](https://matplotlib.org/tutorials/introductory/pyplot.html) og NumPy. 
 
 !["side channel"](../pics/pst_side_channel.png)
 
@@ -1480,7 +1480,7 @@ En [QR-kode](https://en.wikipedia.org/wiki/QR_code) som lot seg avlese til `So c
 
 !["B0"](../pics/pst_23_sjakk.bmp)
 
-Min første tanke var at de to første, R0 og G0, kunne kombineres til noe, og her var jeg nede i flere kaninhull. Testet lenge med [ZXing](https://github.com/zxing/zxing) uten å komme noen vei. Installerte deretter [GIMP](https://www.gimp.org/) som viste seg å ha en million menyer og helt umulig å bruke uten grundig opplæring. I ren desperasjon fant jeg fram et rutbeark og var på vei til å begynne å tegne da `Darth Kevin` tipset om at også B0 hadde noe med saken å gjøre. `S Claus` tipset om at StegSolve hadde muligheten til å kombinere bilder. Om man så tar XOR på R0, G0 og B0, får man fram følgende fine QR-kode:
+Min første tanke var at de to første, R0 og G0, kunne kombineres til noe, og her var jeg nede i flere kaninhull. Testet lenge med [ZXing](https://github.com/zxing/zxing) uten å komme noen vei. Installerte deretter [GIMP](https://www.gimp.org/) som viste seg å ha en million menyer og helt umulig å bruke uten grundig opplæring. I ren desperasjon fant jeg fram et ruteark og var på vei til å begynne å tegne da `Darth Kevin` tipset om at også B0 hadde noe med saken å gjøre. `S Claus` tipset om at StegSolve hadde muligheten til å kombinere bilder. Om man så tar XOR på R0, G0 og B0, får man fram følgende fine QR-kode:
 
 !["flagg"](../pics/pst_23_flagg.bmp)
 
@@ -1574,7 +1574,7 @@ Det var mye prøving og feiling for å få koden rett og mitt første forsøk ga
 
 !["debug"](../pics/pst_24_kvalitetskontroll.png)
 
-I min naivitet trodde jeg at det var tilstrekkelig å bare løse oppgaven for én s.k. "inngangsverdi", og jeg hadde funnet en (23) som ga veldig forutsigbar oppførsel. Den gang ei, koden skulle visstnok fungere for _alle_ inngangsverdier. Etter mye grubling kom jeg fram til at det som ville løse oppgaven var å få sleden inn mot midten og holde den konstant der (`x=127 og dx=0`) samtidig som nissen falt sakte mot pipa (`dy=1`). Det funka nesten alltid, men det var noen ganger nissen landa for langt mot høyre eller venstre, så måtte legge til spesialbehandling dersom det skjedde. Koden som ga flagget så til slutt slik ut
+I min naivitet trodde jeg at det var tilstrekkelig å bare løse oppgaven for én s.k. "inngangsverdi", og jeg hadde funnet en (23) som ga veldig forutsigbar oppførsel. Den gang ei, koden skulle visstnok fungere for _alle_ inngangsverdier. Etter mye grubling kom jeg fram til at det som ville løse oppgaven var å få sleden inn mot midten og holde den konstant der (`x=127` og `dx=0`) samtidig som nissen falt sakte mot pipa (`dy=1`). Det funka nesten alltid, men det var noen ganger nissen landa for langt mot høyre eller venstre, så måtte legge til spesialbehandling dersom det skjedde. Koden som ga flagget så til slutt slik ut
 
 ```
 SETT r0,0; slask
@@ -1589,7 +1589,7 @@ SETT r11,1; konstant, binary on
 
 føde:
 LES r0; SEQ 48
-LES r0; total LEN, 37-38-ish
+LES r0; total LEN, 37-40-ish
 
 ;xcurr = r3
 LES r0; SEQ 48
