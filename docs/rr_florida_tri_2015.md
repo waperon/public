@@ -11,6 +11,8 @@ Edderkoppene i vår kjeller er så store at man kan høre dem gå over gulvet. M
 
 Så jeg gikk og grua meg ganske mye før jeg skulle ut på en halv ironman i zoologiske omgivelser. Helt unødvendig, skulle det vise seg.
 
+!["jernhest"](../pics/florida_tri_bike.jpg)
+
 Når man skal reise til Florida så har jeg hørt at det er lurt å ta med solkrem, badebukser og muligens en t-skjorte. Sett i ettertid burde jeg heller ha pakket sydvest, gummistøvler og lynavleder. For natten før konkurransen våknet jeg sånn i 4-tiden av at det bøtta ned og at lynet slo ned i senga mi. Heldigvis var den jorda, så det gikk greit, men jeg undret litt på hvor trygt det var å svømme og sykle på de flate slettene innover mot Everglades når lynet sprutet fra himmelen. Greit nok med god hjulgummi, men høyeste punktet ville uansett være hodet.
 
 Jeg led kvaler og funderte på å krype enda lenger inn under dyna, men etterhvert roet de verste lynnedslagene seg litt. Det sammenfattes kanskje best i arrangørens egen beskrivelse: “At 4:00 a.m. our crew was dodging lightning bolts inside the park. It seemed we were in serious jeopardy of not having a race, but it turned out to be a great day for triathlon“.
