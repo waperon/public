@@ -40,7 +40,7 @@ I skiftesonen var jeg rask som lynet som vanlig og husket til og med å ta av me
 
 Etter første sving var det hverken mer publikum eller fart i beina og jeg sank sammen til et labert tempo, men åpenbart ikke så labert som resten av gjengen ute i løypene og jeg plukka løper etter løper. Det er jo alltid inspirerende, men det overskygget ikke frykten for det som nå skulle komme. Jeg hadde unnsluppet sumpene, men nå var jeg på god vei inn et sted der de med vilje hadde samla en masse ville dyr. Uvisst av hvilken grunn. Hva skal det være godt for?
 
-!["snabelhest"](../pj_elefant_org.jpg)
+!["snabelhest"](../pics/pj_elefant_org.jpg)
 
 Nå er jeg som sagt ikke spesielt glad i dyr. Ikke har jeg satt meg så veldig inn i forskjellige dyrearter heller. Det begrenser seg stort sett til at jeg vet hva en hest er. Og så er alt annet avarter av det. Det gjelder å forenkle det man kan her i livet. Så sånn sett var det ikke overraskende at løpingen inneholdt å besøke både en meget stor hest med snabel, en litt mindre hest med striper og en merkelig liten hest med meget korte bein og skall på ryggen. Kan det ha vært en islandshest? Litt underholdning var det. Og ikke var det skummelt heller. Sikkerhetsvakter med store køller stod mellom oss og de ville dyra. Som om en kølle hadde hatt en sjanse mot en snabel. Noen ganger er de i overkant naive, disse transatlanterne.
 
