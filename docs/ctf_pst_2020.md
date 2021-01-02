@@ -83,7 +83,7 @@ Som den snikende alvebetjenten jeg nå var, snek jeg meg hjem igjen og latet som
 **Løsning: PST{HeiHoNåErDetJulIgjen}**
 
 ## Kokt egg
-Det viste seg at det var skjult et egg i en fil på dass.npst.no. Men hvilken fil? Jeg fikk et tips om at [dirsearch](https://github.com/maurosoria/dirsearch) var et godt verktøy (kommandolinjevarianten av [DirBuster](https://tools.kali.org/web-applications/dirbuster)?).
+Det viste seg at det var skjult et egg i en fil på [dass](https://dass.npst.no/). Det er alltid kjekt å ta en titt på `robots.txt` og [andre relevante filer](https://en.wikipedia.org/wiki/Robots_exclusion_standard). Jeg fikk også et tips om at [dirsearch](https://github.com/maurosoria/dirsearch) var et godt verktøy (kommandolinjevarianten av [DirBuster](https://tools.kali.org/web-applications/dirbuster)?), og denne gang viste det seg at egget lå gjemt i `humans.txt`. 
 
 ```bash
 $ python3 dirsearch.py -u https://dass.npst.no
@@ -116,7 +116,7 @@ Archive:  beslag.zip
   inflating: privat.7z
 ```
 
-Dette var tydeligvis en [lydfil](https://en.wikipedia.org/wiki/MIDI). En kjapp hexdump av fila ga løsningen
+Dette var tydeligvis en [lydfil](https://en.wikipedia.org/wiki/MIDI). En hexdump av fila ga løsningen
 
 ```bash
 $ xxd -c 10 pen_gwyn_greatest_hits.mid | cut -c 45 | tail -59 | head -34
@@ -184,7 +184,9 @@ Så passordet var `til zip-fila,`. Lot seg åpne med `7z x privat.7z`.
 
 !["cupcake"](../pics/pst_cupcake.png)
 
-Lastet opp cupcake.png til https://stylesuxx.github.io/steganography/, som ga hidden message: [youtu.be/I_8ZH1Ggjk0](http://youtu.be/I_8ZH1Ggjk0). Kunne også tatt `zsteg cupcake.png` for å finne samme melding. YouTube-filmen viste en scene fra [CSI](https://en.wikipedia.org/wiki/CSI:_Crime_Scene_Investigation) der man kan _enhance_ et bilde. dass.npst.no hadde et menyvalg som het `Forbedre...`. Der kunne man laste opp bildet og "forbedre" det. Etter å ha forbedret bildet et antall ganger, kunne man se svaret på den gule lappen i bakgrunnen
+Lastet opp cupcake.png til https://stylesuxx.github.io/steganography/, som viste at det lå en skjult melding i bildet: [youtu.be/I_8ZH1Ggjk0](http://youtu.be/I_8ZH1Ggjk0). Kunne også tatt `zsteg cupcake.png` for å finne samme melding. 
+
+YouTube-filmen viste en scene fra [CSI](https://en.wikipedia.org/wiki/CSI:_Crime_Scene_Investigation) der man kan _enhance_ et bilde. dass.npst.no hadde et menyvalg som het `Forbedre...`. Der kunne man laste opp bildet og "forbedre" det. Etter å ha forbedret bildet et antall ganger, kunne man se svaret på den gule lappen i bakgrunnen
 
 !["lappen"](../pics/pst_9bab0c0ce96dd35b67aea468624852fb.png)
 
@@ -195,7 +197,7 @@ Lastet opp cupcake.png til https://stylesuxx.github.io/steganography/, som ga hi
 ```
 🛷🛷🛷🛷🛷🛷🛷🛷 N4Igzg9grgTgxgUwMIQCYJALhAZQKIAqBABDAIwA0xADAB5kA6AdgGo4DSAkgGInlXlm+IqWpUAbAE4h7AEqcWo5gAkA8gAV1NWgCYEzZgAsAtsczMAdABEAggRvaALI4p1xAVle0ECLwA4Adi8AI3F-MTpUSjpHXzoAQy9HRMiAMy9JVMtbe214iNp3VC8AnS94sro-AGYMuNpJTzoEJtpUAtQwhJSGnWy7BzoA+tS4ENq6auCQ9Lp3aO9phPqEYqrK+jG6HUcDJnUAGQBVHBxRAUYmDnlFGGoZG6Urwj4xbQDgh4UngiPZYjAAE9UAAHCAAGwQTGYhxOZzuFy+t3u0KuBA06j2QNBEKh5meInILiewj4ZE8pEuzG4nAAcrTiCZjMwABp4A4HPD-GBlUh9Al8Cl0KlMCDGADWADdVvjOfDqswDjYcHxdkw2RyuaRaqQ1YrOOw+QIFUwAEJqTTEMFgAAu4KgqAAllBmVc5N8YCbYadzqR3CoMcQxVLVntrXaHc6zEIXr6iTHCZRKf6mLJCH89swQBQQI6mCCoDasCAyKVJPFgnBqqkpn5JI5quJxMEdAF4qka3B5sEyKh2u1EHBm2RJJJgn50KkAtQ4JIdKgdO5hhUdH4fGQaj4PDsQABfIA
 ```
-Innholdet ga mening først etter luke 6 da man hadde fått en introduksjon til SLEDE8. Deretter var det bare å lime inn innholdet i URL'en: [https://https://slede8.npst.no/#N4Igzg9grg...](https://slede8.npst.no/#N4Igzg9grgTgxgUwMIQCYJALhAZQKIAqBABDAIwA0xADAB5kA6AdgGo4DSAkgGInlXlm+IqWpUAbAE4h7AEqcWo5gAkA8gAV1NWgCYEzZgAsAtsczMAdABEAggRvaALI4p1xAVle0ECLwA4Adi8AI3F-MTpUSjpHXzoAQy9HRMiAMy9JVMtbe214iNp3VC8AnS94sro-AGYMuNpJTzoEJtpUAtQwhJSGnWy7BzoA+tS4ENq6auCQ9Lp3aO9phPqEYqrK+jG6HUcDJnUAGQBVHBxRAUYmDnlFGGoZG6Urwj4xbQDgh4UngiPZYjAAE9UAAHCAAGwQTGYhxOZzuFy+t3u0KuBA06j2QNBEKh5meInILiewj4ZE8pEuzG4nAAcrTiCZjMwABp4A4HPD-GBlUh9Al8Cl0KlMCDGADWADdVvjOfDqswDjYcHxdkw2RyuaRaqQ1YrOOw+QIFUwAEJqTTEMFgAAu4KgqAAllBmVc5N8YCbYadzqR3CoMcQxVLVntrXaHc6zEIXr6iTHCZRKf6mLJCH89swQBQQI6mCCoDasCAyKVJPFgnBqqkpn5JI5quJxMEdAF4qka3B5sEyKh2u1EHBm2RJJJgn50KkAtQ4JIdKgdO5hhUdH4fGQaj4PDsQABfIA)
+Innholdet ga mening først etter luke 6 da man hadde fått en introduksjon til SLEDE8. Deretter var det bare å lime inn innholdet i URL'en: [https://slede8.npst.no/#N4Igzg9grg...](https://slede8.npst.no/#N4Igzg9grgTgxgUwMIQCYJALhAZQKIAqBABDAIwA0xADAB5kA6AdgGo4DSAkgGInlXlm+IqWpUAbAE4h7AEqcWo5gAkA8gAV1NWgCYEzZgAsAtsczMAdABEAggRvaALI4p1xAVle0ECLwA4Adi8AI3F-MTpUSjpHXzoAQy9HRMiAMy9JVMtbe214iNp3VC8AnS94sro-AGYMuNpJTzoEJtpUAtQwhJSGnWy7BzoA+tS4ENq6auCQ9Lp3aO9phPqEYqrK+jG6HUcDJnUAGQBVHBxRAUYmDnlFGGoZG6Urwj4xbQDgh4UngiPZYjAAE9UAAHCAAGwQTGYhxOZzuFy+t3u0KuBA06j2QNBEKh5meInILiewj4ZE8pEuzG4nAAcrTiCZjMwABp4A4HPD-GBlUh9Al8Cl0KlMCDGADWADdVvjOfDqswDjYcHxdkw2RyuaRaqQ1YrOOw+QIFUwAEJqTTEMFgAAu4KgqAAllBmVc5N8YCbYadzqR3CoMcQxVLVntrXaHc6zEIXr6iTHCZRKf6mLJCH89swQBQQI6mCCoDasCAyKVJPFgnBqqkpn5JI5quJxMEdAF4qka3B5sEyKh2u1EHBm2RJJJgn50KkAtQ4JIdKgdO5hhUdH4fGQaj4PDsQABfIA)
 
 Når man kjørte programmet, ble egget gulpet opp.  
 
@@ -216,7 +218,20 @@ b1,rgb,lsb,xy       .. text: "EGG{MeasureOnceCutTwice}"
 > Vi i mellomledergruppa har begynt på et forprosjekt for utredning av bemanningsstrategi for påsken i årene fremover. Systemet vi benytter for å finne ut når det er påske oppfører seg rart, slik at dette viktige arbeidet nå har blitt satt på vent. Klarer du å finne ut hva som er feil?
 > Vi i mellomledergruppa er svært interessert i måltall, og ledelsen ønsker en rapport snarest på summen av kolonnen Maaltall fra og med 2020 til og med 2040. Kan du svare meg med denne summen, omkranset av PST{ og } når du finner ut av det?
 
-Den gitte fila `DatoPaaske.csv` inneholdt tilsynelatende de riktige data, men om man kikket nærmere etter, var det en del duplikater og noen som manglet. Hver rad representerte påskeaften for et gitt år. Noen år var duplikater (2020, 2026...) og noen år manglet (2023, 2028, 2034, 2040). Det viste seg å være feil i funksjonen ProcedureDatoPaaske, som regnet år feil. Endte opp med å kjøre opp [MSSQL i Docker](https://hub.docker.com/_/microsoft-mssql-server).
+Oppgaven kom med en fil, `filer.zip`
+
+```bash
+$ unzip filer.zip
+Archive:  filer.zip
+   creating: filer/
+  inflating: filer/DatoPaaske.csv
+  inflating: filer/dbo.DatoPaaske.sql
+  inflating: filer/dbo.FunctionPaaskeAften.sql
+  inflating: filer/GenererRapport.sql
+  inflating: filer/dbo.ProcedureDatoPaaske.sql
+```
+
+`DatoPaaske.csv` inneholdt tilsynelatende de riktige data, men om man kikket nærmere etter, var det en del duplikater og noen som manglet. Hver rad representerte påskeaften for et gitt år. Noen år var duplikater (2020, 2026...) og noen år manglet (2023, 2028, 2034, 2040). Det viste seg å være feil i funksjonen ProcedureDatoPaaske, som regnet år feil. Endte opp med å kjøre opp [MSSQL i Docker](https://hub.docker.com/_/microsoft-mssql-server).
 
 ```bash
 cat DatoPaaske.csv
@@ -239,7 +254,7 @@ echo -e "USE [NPSTDB]\nGO\n$(cat GenererRapport.sql)\nselect sum(MaalTall) from 
  # run sql to get flag
 /opt/mssql-tools/bin/sqlcmd -i rapport_med_rett_db.sql -S localhost -U sa -P 'strong(!)Password'
 ```
-Alternativ, manuell løsning. Legg til de fire tallene i kolonnen fra `DatoPaaske.csv` og slett duplikater. Summere tallene.
+Alternativ, manuell løsning: finn dato for påskeaften for de manglende fire årene på [f.eks. Wikipedia](https://en.wikipedia.org/wiki/List_of_dates_for_Easter). Legg til de fire tallene i `MaalTall`-kolonnen i `DatoPaaske.csv` og slett duplikater. Summer deretter tallene i `MaalTall`-kolonnen.
 ```
 select CONVERT (INT, cast('2023-04-08' AS DATETIME)) => 45022
 select CONVERT (INT, cast('2028-04-15' AS DATETIME)) => 46856
@@ -252,13 +267,16 @@ select CONVERT (INT, cast('2040-03-31' AS DATETIME)) => 51224
 # 5 - CSV og UTF-16
 > Det rapporteres om tilgangstrøbbel til dokumentasjonsvelvet. Vi har fått logger fra Seksjon for passord og forebygging i perioden der man mistenker at feilen kan ligge. Finner dere noe 🧁 i loggene?
 
-Den vedlagte fila, `log.csv`, var [UTF-16](https://en.wikipedia.org/wiki/UTF-16)-encoded, så lot seg ikke søke med f.eks. `grep Pen log.csv` siden alle bokstaver hadde hex `00` bak seg. Det kunne man se mha. xxd. Men `grep -ai p.e.n log.csv` lot seg kjøre, uten at det nødvendigvis ga noe mer. Så var fila URL-encoded også. Tok den inn i CyberChef og kjørte to ting: [decode text fra UTF-16 LE og URL Decode][5]
+Den vedlagte fila, `log.csv`, var [UTF-16](https://en.wikipedia.org/wiki/UTF-16)-encoded, så lot seg ikke søke med f.eks. `grep Pen log.csv` siden alle bokstaver hadde hex `00` bak seg. Det kunne man se med hjelp av `xxd` eller et annet [hexdump-alternativ](https://en.wikipedia.org/wiki/Hex_dump). 
 
-Lastet ned innholdet fra CyberChef og åpnet det i Excel og filtrerte på avsender. Der var det noen som pekte seg ut: `Mellomleder`, `Tastefinger`, `Nissen`, `Systemeier` og `Ni‚Äãssen`. Den siste hadde bare en melding: `I dag har jeg lyst til at PST{879502f267ce7b9913c1d1cf0acaf045} skal v√¶re passordet mitt`. Det var også flagget
+`grep -ai p.e.n log.csv` lot seg dog kjøre, uten at det nødvendigvis ga noe mer. Så var fila URL-encoded også. Tok den inn i CyberChef og kjørte to ting: [decode text fra UTF-16 LE og URL Decode][5]
+
+Lastet ned innholdet fra CyberChef og åpnet det i Excel og filtrerte på avsender. Der var det noen usual suspects som pekte seg ut: `Mellomleder`, `Tastefinger`, `Nissen`, `Systemeier` og `Ni‚Äãssen`. Den siste hadde bare én melding:   
+`I dag har jeg lyst til at PST{879502f267ce7b9913c1d1cf0acaf045} skal v√¶re passordet mitt`. Det var også flagget
 
 **Løsning: PST{879502f267ce7b9913c1d1cf0acaf045}**
 
-Dette virket være et [MD5](https://en.wikipedia.org/wiki/MD5)-hashet passord. Jeg valgte den siste MD5-summen til hver av de fem nevnte brukerne og prøvde [hashcat](https://hashcat.net/hashcat/) for å finne selve passordet. Det ga dog ingen suksess  
+Dette virket være et [MD5](https://en.wikipedia.org/wiki/MD5)-hashet passord. Jeg valgte den siste MD5-summen til hver av de fem nevnte brukerne og prøvde også [hashcat](https://hashcat.net/hashcat/) for å finne selve passordet. Det ga dog ingen suksess  
 `hashcat -m 0 -O -r OneRuleToRuleThemAll.rule passwords_md5.txt passordfil.txt`
 
 
@@ -355,7 +373,7 @@ STOPP
 # 7 - Signal
 > Det har blitt fanget opp et rart signal her på julenissens verksted. Det ser ikke ut til at det er et kontinuerlig signal, da det ser til å komme og gå litt. Klarer du å finne ut hva det er?
 
-Utdelt var en fil, `data.complex16u`, som hadde `file`-kommandoen sa hadde [EBCDIC](https://en.wikipedia.org/wiki/EBCDIC)-data i seg. 
+Utdelt var en fil, `data.complex16u`, som `file`-kommandoen sa hadde [EBCDIC](https://en.wikipedia.org/wiki/EBCDIC)-data i seg. 
 ```bash
 file data.complex16u
 data.complex16u: International EBCDIC text, with very long lines, with no line terminators
@@ -370,35 +388,16 @@ with codecs.open("data.complex16u", 'rb') as input_file:
     print(input_file.read().decode('cp500'))
 ```
 
-Googling etter `complex16u` førte meg til https://github.com/jopohl/urh. Jeg installerte URH (Universal Radio Hacker) og åpnet fila der. Det ga umiddelbart flagget om man valgte "Show Signal as ASCII". URH er visst "a complete suite for wireless protocol investigation with native support for many common Software Defined Radios". Så her er vi inne på [SDR](https://en.wikipedia.org/wiki/Software-defined_radio).
+Googling etter `complex16u` førte meg til https://github.com/jopohl/urh. Jeg installerte URH (Universal Radio Hacker) og åpnet fila der. Det ga umiddelbart flagget om man valgte "Show Signal as ASCII". URH er visst "a complete suite for wireless protocol investigation with native support for many common [Software Defined Radios](https://en.wikipedia.org/wiki/Software-defined_radio)". 
 
 **Løsning: PST{0n_0ff_k3y1ng_1s_34sy!}**
 
 # 8 - ASN.1, del 1
 > Det er viktig med faglig utvikling, også nå i førjulsstria. Dagens tema er ASN.1. Her er litt hjernetrim fra Nissens Kompetansebank™.
 
-```
-MIIBOTCCATAwggEnMIIBHjCCARUwggEMMIIBAzCB+zCB8zCB6zCB4zCB2zCB0zCByzCBwzCBuzCBszCBqzCBozCBnDCBlDCBjDCBhDB9MHYwbzBoMGEwWjBTMEwwRTA+MDcwMTAqMCMwHDAVMA4wBwUAoQMCAROgAwIBA6EDAgEMogMCAQChAwIBE6ADAgEBoQMCARKkAgUAoQMCARShAwIBDqIDAgEYoQMCAQShAwIBEqEDAgEOoQMCAQ6hAwIBB6IDAgECogMCAQigAwIBAaIDAgENogMCARKiAwIBAKMCBQCiAwIBE6IDAgESogMCAQ+hAwIBEaEDAgEOoQMCAQugAwIBAKIDAgEDoQMCAQyhAwIBFKEDAgESoQMCAQ+gAwIBAaEDAgEMoAMCAQOhAwIBEaEDAgEOogMCAQs=
+Utdelt var en [ASN.1-spesifikasjon](https://en.wikipedia.org/wiki/ASN.1) (konstanten `SPECIFICATION` i Python-koden under), samt en kodet streng som virket være base64-enkodet (variabelen `decoded_bytes` i Python-koden under).
 
-Spec DEFINITIONS ::= BEGIN
-    LinkedList ::= Node
-    Node ::= SEQUENCE {
-        child CHOICE {
-            node Node,
-            end NULL
-        },
-        value CHOICE {
-            digit                [0] INTEGER(0..9),
-            lowercase           [1] INTEGER(1..26),
-            uppercase           [2] INTEGER(1..26),
-            leftCurlyBracket    [3] NULL,
-            rightCurlyBracket   [4] NULL
-        }
-    }
-END
-```
-
-[ASN.1](https://en.wikipedia.org/wiki/ASN.1) er et standardisert, formelt språk. Det brukes for å representere data på en implementasjonsuavhengig måte (i følge Wikipedia). De online-ressursene jeg fant, f.eks. https://asn1.io/asn1playground/, håndterte ikke koden. Endte til slutt opp med en Python-løsning
+ASN.1 er et standardisert, formelt språk. Det brukes for å representere data på en implementasjonsuavhengig måte (i følge Wikipedia). De online-ressursene jeg fant, f.eks. https://asn1.io/asn1playground/, håndterte ikke koden. Endte til slutt opp med en Python-løsning
 
 ```python
 import base64
@@ -508,7 +507,7 @@ print("Løsning:", gzip.decompress(bytes.fromhex(res[16:94])).decode('utf-8'))
 Det var et egg i dag også. Først kom en "tjenestepakke" som man måtte klikke på en knapp veldig mange ganger for å installere. Eventuelt ta opp konsollet i [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools) og kjøre
 
 ```javascript
-var i;for (i=0; i<50; i++) {document.getElementsByTagName('button')[3].click();}
+var i;for (i=0; i<100; i++) {document.getElementsByTagName('button')[3].click();}
 ```
 Når tjenestepakken var installert, dukket det opp et nytt verktøy, "Mal": 
 !["mal"](../pics/pst_9_mal.png)
@@ -532,7 +531,7 @@ inc ebp
 jb $+0x7f
 ```
 
-Tok denne koden inn i https://defuse.ca/online-x86-assembler.htm og assemblet den. Resultatet ble `4547477B7838365F6D616368696E455F636F6445727D`
+Tok denne koden inn i https://defuse.ca/online-x86-assembler.htm og assemblet den. Resultatet ble `4547477B7838365F6D616368696E455F636F6445727D`. Oversetter man disse hex-tallene til ASCII, får man flagget
 
 ```
 $ echo 4547477B7838365F6D616368696E455F636F6445727D | xxd -r -p
@@ -752,9 +751,22 @@ STOPP
 # 11 - SQLite og WAL-filer
 > Det interne sikkerhetsteamet hos NPST har oppdaget at det har skjedd en uautorisert modifikasjon på Nissens liste over snille og slemme barn. De påstår at en md5-sum har blitt endret på, men de trenger din hjelp til å finne ut nøyaktig hvilken. Vedlagt ligger en sikkerhetskopi med nissens liste fra det tidspunktet sikkerhetsteamet mener modifikasjonen har oppstått.
 
-Utdelt var en [SQLite](https://www.sqlite.org/index.html)-database, `liste.db`. Sammen med denne, kom en [wal-fil](https://sqlite.org/wal.html). En wal-fil er en "write-ahead log" som håndterer commit og rollback; et mellomlagringssteg før data enten blir skrevet til databasen, eller rullet tilbake. 
+Utdelt var en fil, `liste.zip`. 
 
-Siden [Sanderson Forensics-verktøyene](https://sqliteforensictoolkit.com/) er lisensbelagt, måtte det en del manuell behandling til. Kopierte `liste.db` til `liste_uten_wal.db` og åpnet denne i [SQLite Browser](https://sqlitebrowser.org/). Kopierte innholdet og limte det inn i Excel (kremt...). Åpnet deretter `liste.db` med den aktive wal-fila og kopierte også innholdet inn i samme Excel-regneark. Fikk Excel til å "Remove Duplicates", som da viste at det var pluss ett innslag i `snille`-listen. Sorterte listen på navn og fant ut hvilket navn som hadde to forekomster i listen. Det var `Agnes Brekke 49422712408d5409a3e40945204314e6`. Dette var da flagget.
+```bash
+$ unzip liste.zip
+Archive:  liste.zip
+ extracting: liste.db
+ extracting: liste.db-shm
+ extracting: liste.db-wal
+$ file liste.db
+liste.db: SQLite 3.x database
+```
+
+`liste.db` var altså en [SQLite](https://www.sqlite.org/index.html)-database. Sammen med denne, kom en [wal-fil](https://sqlite.org/wal.html). En wal-fil er en "write-ahead log" som håndterer commit og rollback; et mellomlagringssteg før data enten blir skrevet til databasen, eller rullet tilbake. [shm-fila](https://sqlite.org/tempfiles.html) la jeg til side foreløpig.
+
+Siden [Sanderson Forensics-verktøyene](https://sqliteforensictoolkit.com/) er lisensbelagt, måtte det en del manuell behandling til. Kopierte `liste.db` til `liste_uten_wal.db` og åpnet denne i [SQLite Browser](https://sqlitebrowser.org/). Kopierte innholdet og limte det inn i Excel (kremt...). Åpnet deretter `liste.db` med den aktive wal-fila og kopierte også innholdet inn i samme Excel-regneark. Fikk Excel til å "Remove Duplicates", som da viste at det var pluss ett innslag i `snille`-listen. Sorterte listen på navn og fant ut hvilket navn som hadde to forekomster i listen. Det var    
+`Agnes Brekke 49422712408d5409a3e40945204314e6`. Dette var da flagget.
 
 **Løsning: PST{49422712408d5409a3e40945204314e6}**
 
@@ -768,13 +780,16 @@ $ hashcat -m 0 -O -r OneRuleToRuleThemAll.rule agnesbrekke_md5.txt mine_passord.
 > I mellomtiden har jeg jobbet iherdig med å montere koden. Klarer du å forstå hva SPST vil med dette? Jeg ser frem til verdifull input fra deg!
 > Se vedlagt fil for den monterte koden. Tastefinger mente det var relevant å fortelle at du kan finne nyttige verktøy [her](https://github.com/PSTNorge/slede8).
 
-Dagens oppgave var nok et besøk hos [SLEDE8](https://slede8.npst.no/). Binærfila inneholdt noe lesbart: 
+Dagens oppgave var nok et besøk hos [SLEDE8](https://slede8.npst.no/). "Den monterte koden", `program.s8`, inneholdt noe lesbart: 
 
-`.SLEDE8Qa�����rUg%r%2,Rbe�U����)�#QQW~ndwY8�H=�S}!\��P%U?Korrekt!Feil!��U�`.   
+```bash
+$ cat program.s8
+.SLEDE8Qa�����rUg%r%2,Rbe�U����)�#QQW~ndwY8�H=�S}!\��P%U?Korrekt!Feil!��U�`.   
+```
 
 Jeg klonet [github-repoet](https://github.com/PSTNorge/slede8) og begynte å kikke på koden der. Det var [TypeScript](https://www.typescriptlang.org/), [Node.js](https://nodejs.org/en/) og [Jest](https://jestjs.io/) for testing. Fikk det til slutt åpnet i [IntelliJ](https://www.jetbrains.com/idea/) og fikk til å kjøre tester lokalt. For å få til det måtte jeg gjøre følgende:
 
-- legge til `testEnvironment: 'node'`, i `jest.config.js`
+- legge til `testEnvironment: 'node'` i `jest.config.js`
 - lage en ny Run/Debug Configuration for npm med command `run` og scripts `test`. Mulig det steget ikke var nødvendig, men fikk ikke satt opp IntelliJ for å kunne kjøre `step()`-metoden ellers. Måtte ty til `npm run test` fra kommandolinja før det
 
 Det viste seg i `runtime.ts` at metoden `load()` lastet den binære fila inn i minnet, og at den sjekket for `magic` som var `.SLEDE8` i starten på fila. Alt etter `.SLEDE8` kunne kjøres rett inn i SLEDE8 som `.DATA`, slik
@@ -786,7 +801,7 @@ Det viste seg i `runtime.ts` at metoden `load()` lastet den binære fila inn i m
 .DATA 0,4,2,7,162,217,6,22,2,85,176,24,6,11,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 ```
 
-Kjørte programmet i SLEDE8 med diverse føde, som alle ga oppgulp `Feil!`. Det var åpenbart at riktig føde ville gi oppgulp `Korrekt!`, men hva var riktig føde? Begynte å debugge `step()`-metoden som inneholdt alt som var av interesse. Det skjedde mye med registerne, og jeg forsøkte først å disassemble SLEDE8-koden. Endte opp med
+Kjørte programmet i SLEDE8 med diverse føde. Det viste seg at programmet ville ha minst 52 tegn (26 byte) for ikke å gå tomt for føde. Alle forsøk ga oppgulp `Feil!`. Det var åpenbart at riktig føde ville gi oppgulp `Korrekt!`, men hva var riktig føde? Begynte å debugge `step()`-metoden som inneholdt alt som var av interesse. Det skjedde mye med registerne, og jeg forsøkte først å disassemble SLEDE8-koden. Endte opp med
 
 ```
 SETT r5,0
@@ -829,7 +844,7 @@ for (let i = 0; i < alphabet.length; i++) {
 console.log(prefix)
 ```
 
-Kjørte den mot `step()`-funksjonen som umiddelbart ga løsningen   
+Kjørte den mot `step()`-funksjonen som ga løsningen   
 
 **Løsning: PST{fib0nacc1_0net1m3_p4d}**
 
@@ -868,7 +883,7 @@ Dersom man myste godt på den tekstfila som var vedlagt, kunne man ane bokstaver
 # 14 - SLEDE8, rekkefølge
 > Det nyeste innen måltallsrapportering er antall fullførte e-læringsmoduler i SLEDE8 blandt de ansatte, så kunne du gjennomført modul 97672649875ca349? Rapporter tilbake som vanlig når du er ferdig!
 
-Nok en SLEDE8 oppgave. Her gjaldt det å holde tunga rett i munnen når man lagret verdier til registre. En adresse lagres over to registre, `r0` og `r1`. Der `r1` har den mest signifikante biten. Det tok tid å komme seg forbi alle testene på serveren, spesielt test 6. Siden man ikke visste hva test 6 var, måtte man bare prøve seg fram. Viste seg at versjon 1 av mitt program ikke klarte å håndtere føde > 512 tegn. Grunnen til det var at jeg i utgangspunktet hadde en teller som telte antall lagringer, og en teller som telte antall utskrifter. Når disse var like, var programmet ferdig. Problemet var at disse verdiene ble lagret i et register som bestod av 1 byte, og kunne således kun telle opp til 255. Ved heller å sette første byte i `.DATA 0x00` og sjekke på det når man telte ned igjen, kom man i mål.
+Nok en SLEDE8 oppgave. Her gjaldt det å holde tunga rett i munnen når man lagret verdier til registre. En adresse lagres over to registre, `r0` og `r1`. Der `r1` har den mest signifikante biten. Det tok tid å komme seg forbi alle testene som ble kjørt på serveren, spesielt test 6. Siden man ikke visste hva test 6 var, måtte man bare prøve seg fram. Det viste seg at versjon 1 av mitt program ikke klarte å håndtere føde > 512 tegn. Grunnen til det var at jeg i utgangspunktet hadde en teller som telte antall lagringer, og en teller som telte antall utskrifter. Når disse var like, var programmet ferdig. Problemet var at disse verdiene ble lagret i et register som bestod av 1 byte, og kunne således kun telle opp til 255. Ved heller å sette første byte i `.DATA 0x00` og sjekke på det når man telte ned igjen, kom man i mål.
 ```
 ; Føde består av et ukjent antall verdier, der verdien 0x00 markerer siste verdi.
 ; Skriv ut verdiene i motsatt rekkefølge.
@@ -1066,20 +1081,7 @@ BHOPP skriv_ut
 # 17 - ASN.1, del 2
 > NPST har avlyttet telefonen til en mistenkt etteretningsoffiser fra SPST. Teleoperatøren har oversendt data i henhold til ETSI232-1, men våre systemer klarer ikke å forstå innholdet. Vi mistenker at det er benyttet en svært enkel kode, men våre analytikere sier det er LITE SANNSYNLIG at XMAS er benyttet.
 
-Dagens tema var igjen [ASN.1](https://en.wikipedia.org/wiki/ASN.1), som luke 8. En ny spesifikasjon i dag
-
-```
-MIIEJaE3MDWgCQYHBAICAAUBDqEJBAdwZW5nd3luogQTAk5PoxAwDqAMMAqgCAQGU0FOVEVMpAUCAwj4k6KCA+ihggPkMIID4DAVoAMKAQCiDqAMBApjS0AET1JBSEAFMBCgAwoBAKIJoAcEBWtSQVYKMBCgAwoBAaIJoAcEBWxBTQoEMCKgAwoBAaIboBkEF2xFVgRAUQRCUUpKQVAESktBBEPnnF0bMBagAwoBAKIPoA0EC25FCARXQQRMQVYKMA6gAwoBAaIHoAUEAxsbBDAfoAMKAQGiGKAWBBRuQUMEV0FWBE1KQ0FKBFBNSkMKBDAboAMKAQCiFKASBBAODg4ODg4ODg4ODg4ODg4OMCigAwoBAaIhoB8EHW5BQwRXQVYERkVWQQQODg4ODg4ODg4ODg4ODg4OMDugAwoBAKI0oDIEMGtNCAROQUMER0tUXQtURVdQQVAEVEVXV0tWQEFQBElNUFAEUkFABEFKBEJBTUgKBDAeoAMKAQCiF6AVBBNmVkUEQEFQBEZIQQRXSEVAQEFQMBGgAwoBAaIKoAgEBk5BQ0FWFjANoAMKAQCiBqAEBAIbGzAdoAMKAQGiFqAUBBJgQVAEQlFKT0FQBE1PT0EKCgowG6ADCgEAohSgEgQQCgoKBFJBSlAESE1QUAQKCjAToAMKAQCiDKAKBAhAHUcXEkdHQjAPoAMKAQGiCKAGBARM54IbMA+gAwoBAKIIoAYEBBJFFxwwD6ADCgEAogigBgQEEBYcFTAPoAMKAQCiCKAGBARGEBxCMA+gAwoBAaIIoAYEBBsbGxswF6ADCgEAohCgDgQMQBUQQEYSHRBARUVBMBugAwoBAaIUoBIEEGxSRQRXQVYETkFDBFTngRkwI6ADCgEAohygGgQYYEFQBFdPRUgEUueCVkEEQUoEUVFNQAoEMCygAwoBAKIloCMEIWZNSkBBV1BWQU9PSkVUVEFKBElNSgRCUUpPQVYETU9PQTAroAMKAQGiJKAiBCBrQwRMUkUEQ0tAUARXT0VIBEBBUARDTuecVkEESUFDGzBPoAMKAQCiSKBGBERgUQRJ54EEUEUESUARBEVSBFFRTUADQUoEV0tJBEhLU0FWR0VXQQRMQVwES0MESEFDQ0EEUE1IBEBBUARSRUpITUNBCjAVoAMKAQGiDqAMBAp3T07nnEpKQVYFMB6gAwoBAaIXoBUEE2BBUARCUUpPQVYETU9PQQQKCgowNKADCgEAoi2gKwQpc0xLS1RXCgRxUU1AQUoEV09RSEhBBFdQRVZQQQRJQUAERx1HDAoKCg0wJaADCgEAoh6gHAQaCgoKBEtDBFdIUVBQQQRJQUAEDAoKCg0QRRcwFaADCgEBog6gDAQKc21qBQRwRU9PCjAYoAMKAQCiEaAPBA1xSkBBVgRLQwRNSkoK
-
-Spec DEFINITIONS ::= BEGIN
-    LawfulInterceptionIdentifier ::= OCTET STRING (SIZE (1..25))
-
-    PS-PDU ::= SEQUENCE {
-        pSHeader    [1] PSHeader,
-        payload     [2] Payload
-    }
-...
-```
+Dagens tema var igjen [ASN.1](https://en.wikipedia.org/wiki/ASN.1), som luke 8. En ny spesifikasjon i dag (konstanten `SPECIFICATION` i Python-koden under), samt en kodet streng som igjen virket være base64-enkodet (variabelen `decoded_bytes` i Python-koden under).
 
 Gjenbrukte python-koden fra luke 8, med noen modifikasjoner
 
@@ -1211,7 +1213,7 @@ MD5 ("c9c36ccf-6a38-4281-b48f-d14db694d4a3") = 0ae06caf767ac7ebce290cfc57be6a6f
 
 # 18 - SLEDE8, buffer overflow
 > SPST har publisert noe de påstår er en svært avansert kunstig intelligens på sin [GitHub-konto](https://github.com/SydpolarSikkerhetstjeneste).
-> Jeg har sjekket den ut på pingvin.spst.no, men får bare opp et vakkert bilde av en pingvin. Kan du ta en titt?
+> Jeg har sjekket den ut på [pingvin.spst.no](https://pingvin.spst.no/), men får bare opp et vakkert bilde av en pingvin. Kan du ta en titt?
 
 Her var det mye på en gang og mange kaninhull å falle ned i. Om man kikket på den "avanserte kunstige intelligensen", så man følgende i `ai.js`
 
@@ -1286,7 +1288,7 @@ $ curl "https://pingvin.spst.no/.netlify/functions/count?input=8J-Qp_CfkKfwn5Cn8
 ```
 `80` er ASCII-koden til `P`, så her var vi tydeligvis på rett vei! Da var det bare å fortsette med `SETT r0,7` for å lese neste byte osv. helt til vi fikk ASCII-koden for `}`. Til slutt satt vi igjen med en fin rekke desimaltall, som lot seg [oversette til ASCII][183]. (Etter å ha lest andres løsningsforslag, viste det seg at man ikke trengte ett http-kall per bokstav, men at man kunne få all oppgulp fra kun ett kall. Det hadde vært mer effektivt).
 
-For moro skyld, lagde jeg en one-liner som skriver hele flagget (sleit mest med å få konvertert desimal til ASCII der). 
+For moro skyld lagde jeg en one-liner som skriver hele flagget (sleit mest med å få konvertert desimal til ASCII der 🤭). 
 ```bash
 for i in G H I J K L M N O P Q R S T U V W X Y Z a b c d e f g h i j k l; do curl -s "https://pingvin.spst.no/.netlify/functions/count?input=8J-Qp_CfkKfwn5Cn8J-Qp_CfkKfwn5Cn8J-Qp_CfkKfwn5Cn8J-Qp_CfkKfwn5Cn8J-Qp_CfkKfwn5Cn8J-Qp_CfkKfwn5Cn8J-Qp_CfkKfwn5Cn8J-Qp_CfkKfwn5Cn8J-Qp_CfkKfwn5Cn8J-Qp_CfkKfwn5Cn8J-Qp_CfkKcBBgE${i}BAIWAkgfAA" | sed -e 's/{\"svar\":\[\(.*\)\]}/\1/' | xargs -I d awk 'BEGIN{printf "%c", d}'; done
 ```
@@ -1327,7 +1329,9 @@ System.out.println(Shamir.combine(new SecretShare[]{ss3, ss4, ss5}, favorittall)
 
 > Etter alle de merkelige hendelsene i det siste monitorerer vi heldigvis nettet vårt. Denne saken har høy prioritet, fint om du ser på den med en gang.
 
-Nettverksanalyse er ikke min sterke side, så her var jeg på litt gyngende grunn. Heldigvis finnes internettet, med et hav av ressurser. Jeg fant et CTF-relatert dokument om [PCAP Analysis](https://github.com/welchbj/ctf/blob/master/docs/pcap.md) som ga en del gode tips. Prøvde først `binwalk -e trafikk.pcapng`, men den klarte bare å ekstrahere korrupte filer. Så da var det over til [Wireshark](https://www.wireshark.org/) som vel er de facto standard programvare for å analysere pcap-filer. Å finne noe relevant i pcap-filer er å lete etter nåla i høystakken. Et godt sted å begynne, er å prøve å ekstrahere filer som Wireshark har tilgang til fra nettverksstrømmen. Menyvalget `File->Export Objects->HTTP...` ga en liste over en lang rekker dokumenter. Det var to dokumenter som virket relevante, begge med filnavn `PyPwg==`. Den ene var en ren tekstfil med følgende innhold
+Nettverksanalyse er ikke min sterke side, så her var jeg på litt gyngende grunn. Heldigvis finnes internettet, med et hav av ressurser. Jeg fant et CTF-relatert dokument om [PCAP Analysis](https://github.com/welchbj/ctf/blob/master/docs/pcap.md) som ga en del gode tips. Prøvde først `binwalk -e trafikk.pcapng`, men den klarte bare å ekstrahere korrupte filer. Så da var det over til [Wireshark](https://www.wireshark.org/) som vel er de facto standard programvare for å analysere pcap-filer. 
+
+Å finne noe relevant i pcap-filer er å lete etter nåla i høystakken. Et godt sted å begynne, er å prøve å ekstrahere filer som Wireshark har tilgang til fra nettverksstrømmen. Menyvalget `File->Export Objects->HTTP...` ga en liste over en lang rekker dokumenter. Det var to dokumenter som virket relevante, begge med filnavn `PyPwg==`. Den ene var en ren tekstfil med følgende innhold
 
 ```
 Hemmeligheten er mottat
@@ -1337,10 +1341,12 @@ Den andre fila var binær. Tok man en hexdump av den, kunne man se følgende
 ```
 Content-Disposition: form-data; name="secretFile1"; filename="file1"..Content-Type: application/octet-stream
 ...
-Content-Disposition: form-data; name="secretFile2"; filename="file2"..Content-Type: application/octet-stream
+Content-Disposition: form-data; name="secretFile2"; filename="file2"..Content-Type: application/octet-stream....PK..
+...
+Content-Disposition: form-data; name="message"....Som avtalt
 ```
 
-Det virket som om file2 var en komprimert fil siden den hadde filsignaturen [`504b0304`](https://www.filesignatures.net/index.php?page=search&search=504B0304&mode=SIG).
+Det virket som om file2 var en komprimert fil siden den hadde filsignaturen `PK..`, i hex: [`504b0304`](https://www.filesignatures.net/index.php?page=search&search=504B0304&mode=SIG).
 
 ```bash
 $ unzip PyPwg==
@@ -1365,7 +1371,9 @@ SERVER_HANDSHAKE_TRAFFIC_SECRET c08e088c3a8de40c4e984836f470b57ddd9563580d77039a
 
 Så da var det tilbake til Wireshark, med nok en pcap-fil og en fil med en masse handshakes, noe som indikerte [TLS Authentication Messages](https://tools.ietf.org/html/draft-ietf-tls-tls13-28#section-4.4). 
 
-Etter å ha lasta pcap-fila til Wireshark, kunne man gjøre det samme med `tls.txt`: `Wireshark-Preferences->Protocols->TLS->(Pre)-Master-Secret log filename`. Etter det var gjort, kunne man eksportere objekter igjen. Denne gangen dukket to opp: `secretdoc.pdf` og `favicon.ico`. PDF-fila inneholdt flagget i klartekst. Sjekka også PDF-filas metadata med `exiftool secretdoc.pdf` uten at det ga noe ekstra.
+Etter å ha lasta pcap-fila til Wireshark, kunne man gjøre det samme med `tls.txt`: `Wireshark-Preferences->Protocols->TLS->(Pre)-Master-Secret log filename`. 
+
+Etter det var gjort, kunne man eksportere objekter igjen. Denne gangen dukket to opp: `secretdoc.pdf` og `favicon.ico`. PDF-fila inneholdt flagget i klartekst. Sjekka også PDF-filas metadata med `exiftool secretdoc.pdf` uten at det ga noe ekstra.
 
 **Løsning: PST{5h4dy53rv3r}**
 # 21 - Rule 30
@@ -1427,7 +1435,9 @@ fun main() {
 
 > Finner du en sammenheng mellom ønskelister og strømforbruk? Og får du tak i kryptonøkkelen, og dekryptert den viktige meldingen?
 
-```
+Tre filer var vedlagt: `viktig_melding.json`, `strømforbruk.npy` og `ønskelister.npy`. Den "viktige meldingen" så slik ut
+
+```json
 {
    "algorithm": "AES-128-ECB",
    "library": "TINYAES128C",
@@ -1436,11 +1446,11 @@ fun main() {
 }
 ```
 
-To filer med [NumPy](https://numpy.org/)-data, som tydeligvis er et Python-bibliotek for numeriske analyser. _Sidespor_ fra teksten refererer til [Side-channel attack](https://en.wikipedia.org/wiki/Side-channel_attack), så tanken er å bruke strømforbruket som en side-channel attack for å få fram nøkkelen. Og da kunne jeg google meg fram til [Power analysis](https://en.wikipedia.org/wiki/Power_analysis). Her var det mange kaninhull å falle ned i. Hva var sammenhengen mellom de 50 ønskelistene og strømforbruket? Ønskelistene hadde verdier 0-255, dvs. en byte. Strømforbruket hadde oscillerende verdier. Plottet man sending av en ønskeliste opp mot tilsvarende strømforbruk, fikk man bilder ala denne med hjelp av [matplotlib](https://matplotlib.org/tutorials/introductory/pyplot.html) og NumPy. 
+To filer hadde altså [NumPy](https://numpy.org/)-data. Det er tydeligvis et Python-bibliotek for numeriske analyser. _Sidespor_ fra teksten refererer til [Side-channel attack](https://en.wikipedia.org/wiki/Side-channel_attack), så tanken er å bruke strømforbruket som en side-channel attack for å få fram nøkkelen. Og da kunne jeg google meg fram til [Power analysis](https://en.wikipedia.org/wiki/Power_analysis). Her var det mange kaninhull å falle ned i. Hva var sammenhengen mellom de 50 ønskelistene og strømforbruket? Ønskelistene hadde verdier 0-255, dvs. en byte. Strømforbruket hadde oscillerende verdier. Plottet man sending av en ønskeliste opp mot tilsvarende strømforbruk, fikk man bilder ala denne med hjelp av [matplotlib](https://matplotlib.org/tutorials/introductory/pyplot.html) og NumPy. 
 
 !["side channel"](../pics/pst_side_channel.png)
 
-Hva kan man lese ut der? Er det ønskeliste\[1\], \[4\] \[7\] \[8\] \[9\] og \[10\] som er av interesse her? Var en tur innom [ChipWhisperer](https://github.com/newaetech/chipwhisperer) som hadde mye interessant om temaet. Googling etter "ctf aes power analysis attack" viste at det var en populær CTF-oppgave. [CTF Wiki](https://ctf-wiki.github.io/ctf-wiki/crypto/asymmetric/rsa/rsa_side_channel/) hadde bl.a. en artikkel om temaet. Til slutt endte jeg opp hos [TeamRocketIST](https://teamrocketist.github.io/2018/11/14/Crypto-SquareCtf-2018-C4-leaky-power/) som hadde løst oppgaven. Jeg kopiert rått og med litt skam koden og kjørte den lokalt. Den hosta opp
+Hva kan man lese ut der? Er det ønskeliste\[1\], \[4\] \[7\] \[8\] \[9\] og \[10\] som er av interesse her? Var en tur innom [ChipWhisperer](https://github.com/newaetech/chipwhisperer) som hadde mye interessant om temaet. Googling etter "ctf aes power analysis attack" viste at det var en populær CTF-oppgave. [CTF Wiki](https://ctf-wiki.github.io/ctf-wiki/crypto/asymmetric/rsa/rsa_side_channel/) hadde bl.a. en artikkel om temaet. Til slutt endte jeg opp hos [TeamRocketIST](https://teamrocketist.github.io/2018/11/14/Crypto-SquareCtf-2018-C4-leaky-power/) som hadde løst oppgaven i en tidligere CTF. Jeg kopierte rått (og med litt skam) koden og kjørte den lokalt. Den hosta opp
 
 ```
 Best Key Guess: 9dedc4e592b7c01d43667efaa74eb6e5
@@ -1468,7 +1478,7 @@ Kan selvsagt også løses i [CyberChef][22].
 
 !["julekort"](../pics/pst_23_julekort.png)
 
-Her kom tankene raskt til steganografi. Ingen skjult tekst lot seg avekke med `zsteg`, men det finnes andre måter å skjule ting i bilder. Her finnes det flere verktøy å bruke, f.eks. [ImageMagick](https://imagemagick.org/index.php) eller [StegSolve](http://www.caesum.com/handbook/stego.htm). Jeg foretrekker det sistnevnte siden det er forholdsvis enkelt i bruk. Etter å ha åpnet julekortet i StegSolve viste det seg raskt at det lå ting skjult. Dette bildet lå i [R0](https://en.wikipedia.org/wiki/Channel_(digital_image)):
+Her kom tankene raskt til steganografi. Ingen skjult tekst lot seg avekke med `zsteg`, men det finnes andre måter å skjule ting i bilder. Det finnes flere verktøy å bruke, f.eks. [ImageMagick](https://imagemagick.org/index.php) eller [StegSolve](http://www.caesum.com/handbook/stego.htm). Jeg foretrekker det sistnevnte siden det er forholdsvis enkelt i bruk. Etter å ha åpnet julekortet i StegSolve viste det seg raskt at det lå ting skjult. Dette bildet lå i [R0](https://en.wikipedia.org/wiki/Channel_(digital_image)):
 
 !["R0"](../pics/pst_23_qr1.bmp)
 
@@ -1498,7 +1508,7 @@ Den lot seg avlese til `PST{4ll_th3s3_d3l1c10us_l4y3rs}`.
 
 Installering av tjenestepakken krevde gjentatte tastetrykk på en knapp. Eventuelt ta opp konsollet i [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools):
 ```javascript
-var i;for (i=0; i<50; i++) {document.getElementsByTagName('button')[4].click();}
+var i;for (i=0; i<100; i++) {document.getElementsByTagName('button')[4].click();}
 ```
 
 Etter installering av den nevnte tjenestepakken, dukket menyvalget "Sledesimulator" opp. Det var en variant av det klassiske [Lunar Lander](https://en.wikipedia.org/wiki/Lunar_Lander_(1979_video_game))-spillet. Istedenfor å lande et romskip på månen, skulle man lande nissen på ei pipe. Verktøyene man hadde tilgjengelige var en mulighet for å "laste inn fastvare", nevnte Chrome DevTools og en "Sledesimulatorspesifikasjon":
@@ -1545,7 +1555,7 @@ function decodeOppgulp(oppgulp) {
 }
 ```
 
-Det var altså oppgulp fra SLEDE8 som var input til simulatoren. Og nevnte "fastvare" var da en SLEDE8-binærfil. Regex for oppgulpet var listet i javascript-metoden over og var på formatet `30090101xx0101yy0101zz`. Der `xx`, `yy` og `zz` alle betegnet om en av motorene høyre, venstre eller vertikal skulle slås av (`00`), eller slås på (et positivt hex tall, f.eks. `01`). Det ble en del testing for å få oppgulp rett, men det som var verre å forstå var input til SLEDE8-programmet, den s.k. _føden_. Fra javascript kunne man se at man ville få nåværende og forrige posisjon, samt koordinater for pipa nissen skulle treffe
+Det var altså oppgulp fra SLEDE8 som var input til simulatoren. Og nevnte "fastvare" var da en SLEDE8-binærfil. Regex for oppgulpet var listet i javascript-metoden over og var på formatet `30090101xx0101yy0101zz`. Der `xx`, `yy` og `zz` alle betegnet om en av motorene høyre, venstre eller vertikal skulle slås av (`00`), eller slås på (et positivt hex-tall, f.eks. `01`). Det ble en del testing for å få oppgulp rett, men det som var verre å forstå, var input til SLEDE8-programmet, den s.k. _føden_. Fra javascript kunne man se at man ville få nåværende og forrige posisjon, samt koordinater for pipa nissen skulle treffe
 
 ```javascript
 const encodeFøde = (input) => {
