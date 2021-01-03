@@ -1,9 +1,9 @@
 ---
 title: PST Julekalender CTF
-author: pst.no 
+author: https://pst.no/
 instructor: https://github.com/tastefinger
 type: CTF
-link: npst.no
+link: https://npst.no/
 date: 2020-12-24
 ---
 # Intro
@@ -1513,6 +1513,8 @@ var i;for (i=0; i<100; i++) {document.getElementsByTagName('button')[4].click();
 
 Etter installering av den nevnte tjenestepakken, dukket menyvalget "Sledesimulator" opp. Det var en variant av det klassiske [Lunar Lander](https://en.wikipedia.org/wiki/Lunar_Lander_(1979_video_game))-spillet. Istedenfor å lande et romskip på månen, skulle man lande nissen på ei pipe. Verktøyene man hadde tilgjengelige var en mulighet for å "laste inn fastvare", nevnte Chrome DevTools og en "Sledesimulatorspesifikasjon":
 
+!["simulator"](../pics/pst_24_simulator_meny.png)
+
 ```
 Position ::= SEQUENCE {
 	x INTEGER(0..255),
@@ -1537,7 +1539,7 @@ AutopilotOppgulp ::= SEQUENCE {
 }
 ```
 
-Sledesimulatorens javascript ga en del hint om hva som var forventet input til programmet:
+Sledesimulatorens javascript ga en del hint om hva som var forventet input til simulatoren:
 
 ```javascript
 function decodeOppgulp(oppgulp) {
@@ -1555,7 +1557,7 @@ function decodeOppgulp(oppgulp) {
 }
 ```
 
-Det var altså oppgulp fra SLEDE8 som var input til simulatoren. Og nevnte "fastvare" var da en SLEDE8-binærfil. Regex for oppgulpet var listet i javascript-metoden over og var på formatet `30090101xx0101yy0101zz`. Der `xx`, `yy` og `zz` alle betegnet om en av motorene høyre, venstre eller vertikal skulle slås av (`00`), eller slås på (et positivt hex-tall, f.eks. `01`). Det ble en del testing for å få oppgulp rett, men det som var verre å forstå, var input til SLEDE8-programmet, den s.k. _føden_. Fra javascript kunne man se at man ville få nåværende og forrige posisjon, samt koordinater for pipa nissen skulle treffe
+Det var altså oppgulp fra SLEDE8 som var input til simulatoren. Og nevnte "fastvare" var da en SLEDE8-binærfil. Regex for oppgulpet var listet i javascript-metoden over og var på formatet `30090101xx0101yy0101zz`. Der `xx`, `yy` og `zz` alle betegnet om en av motorene høyre, venstre eller vertikal skulle slås av (`00`), eller slås på (et positivt hex-tall, f.eks. `01`). Det ble en del testing for å få oppgulp rett, men det som var verre å forstå, var input til SLEDE8-programmet, den s.k. _føden_. Fra javascript kunne man se at man ville få nåværende og forrige posisjon, samt koordinater for pipa nissen skulle treffe. Simulatoren hadde et koordinatsystem der (0, 0) var oppe i venstre hjørne, mens (255, 255) var nede i høyre hjørne.
 
 ```javascript
 const encodeFøde = (input) => {
@@ -1735,7 +1737,7 @@ Dette ga en glad nisse som landet trygt på pipa. Julen var reddet!
 
 !["simulator"](../pics/pst_24_simulator.png)
 
-Trykket man på `Redd julen` ble det tydeligvis kjørt noen tester på inngangsverdier i bakkant, og når disse kjørte ok, ble man belønnet med følgende melding
+Trykket man på `Redd julen` ble det tydeligvis kjørt noen tester på inngangsverdier i bakkant. Når disse kjørte ok, ble man belønnet med følgende melding
 
 !["redd julen"](../pics/pst_24_redd_jula.png)
 
