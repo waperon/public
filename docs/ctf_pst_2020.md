@@ -1511,7 +1511,7 @@ Installering av tjenestepakken krevde gjentatte tastetrykk på en knapp. Eventue
 var i;for (i=0; i<100; i++) {document.getElementsByTagName('button')[4].click();}
 ```
 
-Etter installering av den nevnte tjenestepakken, dukket menyvalget "Sledesimulator" opp. Det var en variant av det klassiske [Lunar Lander](https://en.wikipedia.org/wiki/Lunar_Lander_(1979_video_game))-spillet. Istedenfor å lande et romskip på månen, skulle man lande nissen på ei pipe. Verktøyene man hadde tilgjengelige var en mulighet for å "laste inn fastvare", nevnte Chrome DevTools og en "Sledesimulatorspesifikasjon":
+Etter installering av den nevnte tjenestepakken, dukket menyvalget "Sledesimulator" opp. Det var en variant av det klassiske [Lunar Lander](https://en.wikipedia.org/wiki/Lunar_Lander_(video_game_genre))-spillet. Istedenfor å lande et romskip på månen, skulle man lande nissen på ei pipe. Verktøyene man hadde tilgjengelige var en mulighet for å "laste inn fastvare", nevnte Chrome DevTools og en "Sledesimulatorspesifikasjon":
 
 !["simulator"](../pics/pst_24_simulator_meny.png)
 
@@ -1569,7 +1569,7 @@ const encodeFøde = (input) => {
 };
 ```
 
-Det viste seg at føde kom som ASM.1 BER, noe som førte til at det ikke alltid var gitt hvor mange byte en posisjon brukte. Mye debugging av javascript-koden måtte til, og funksjonen `step(executable, stdin, maxTicks = 1000)` i `index.mjs` ga nyttig informasjon. Der kunne man bl.a. se følgende
+Det viste seg at føde kom som [ASN.1 BER](https://en.wikipedia.org/wiki/X.690#BER_encoding), noe som førte til at det ikke alltid var gitt hvor mange byte en posisjon brukte. Mye debugging av javascript-koden måtte til, og funksjonen `step(executable, stdin, maxTicks = 1000)` i `index.mjs` ga nyttig informasjon. Der kunne man bl.a. se følgende
 
 !["debug"](../pics/pst_24_debug.png)
 
