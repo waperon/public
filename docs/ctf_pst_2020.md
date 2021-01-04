@@ -7,7 +7,9 @@ link: https://npst.no/
 date: 2020-12-24
 ---
 # Intro
-For andre året på rad arrangerte [PST](https://pst.no/) en [CTF](https://en.wikipedia.org/wiki/Capture_the_flag) der man under tiden fra 1. til 24. desember 2020 skulle løse ulike oppgaver på nett. Som året før, var temaet knyttet opp mot sikkerhetstjenester på Nordpolen og Sydpolen samt noen skumle pingviner som forsøkte å gjøre livet surt for julenissen og hans reinsdyr. Heller obskurt tema, men ganske så underholdende. Hver dag fikk man en ny oppgave i form av en e-post fra brukeren `Mellomleder` i et eget e-post grensesnitt, `Snabel-A`, på nettstedet [dass.npst.no](https://dass.npst.no/). Svaret på oppgaven ville være et _flagg_ som ga 10 poeng.
+For andre året på rad arrangerte [PST](https://pst.no/) en [CTF](https://en.wikipedia.org/wiki/Capture_the_flag) der man under tiden fra 1. til 24. desember 2020 skulle løse ulike oppgaver på nett. Som året før, var temaet knyttet opp mot sikkerhetstjenester på Nordpolen og Sydpolen samt noen skumle pingviner som forsøkte å gjøre livet surt for julenissen og hans reinsdyr. For å hjelpe nissen, skulle man opptre som "snikende alvebetjent på Nordpolen". Heller obskurt tema, men ganske så underholdende og godt gjennomført med [egen stillingsannonse på FINN](https://www.finn.no/200249083) og [omtale i media](https://www.tv2.no/a/11815059/).
+
+Hver dag fikk man en ny oppgave i form av en e-post fra brukeren `Mellomleder` i et eget e-post grensesnitt, `Snabel-A`, på nettstedet [dass.npst.no](https://dass.npst.no/). Svaret på oppgaven ville være et _flagg_ som ga 10 poeng.
 
 > Poenggivende flagg er på formen `PST{.*}`, eksempelvis `PST{littTekstOgTall}`.
 
@@ -15,7 +17,7 @@ For andre året på rad arrangerte [PST](https://pst.no/) en [CTF](https://en.wi
 
 Det kom også frem etterhvert at det fantes ekstraoppgaver i årets kalender som lå skjult litt rundt omkring som [easter eggs](https://en.wikipedia.org/wiki/Easter_egg_(media)). Ved å finne disse eggene, fikk man en ekstra stjerne i margen på resultatlisten som ble kontinuerlig oppdatert. Med fasit i hånd, var det totalt 11 egg gjemt litt her og der. Mer om de senere.
 
-Det er veldig mange som er mye bedre enn meg på denne type CTF'er, men det er allikevel utrolig lærerikt å prøve seg på de ulike oppgavene. Allikevel litt frustrerende iblant å se at noen løste oppgaven på under 10 min, mens jeg selv brukte maaange timer. Læringsutbyttet kan uansett ingen ta fra oss som deltok 😊 Jeg kom til slutt i mål med alle oppgavene, selv om luke 24 ble levert en dag for sent. Julaften var litt opptatt med andre ting...
+Det er veldig mange som er mye bedre enn meg på denne type CTF'er, men det er utrolig lærerikt å prøve seg på de ulike oppgavene. Allikevel litt frustrerende iblant å se at noen løste oppgaven på under 10 min, mens jeg selv brukte maaange timer. Læringsutbyttet kan uansett ingen ta fra oss 😊 Og oppi det hele skal jul forberedes og feires. Det var ikke alltid så lett, men noen ganger må det prioriteres. Så da kom jeg ikke helt i mål på julaften, men dagen etter hadde jeg litt tid og klarte å levere de siste oppgavene. Det var nok en rett prioritering (hilsen familien) 😊
 
 Som året før, var det også dette året en aktiv [Discord-kanal](https://discord.gg/8kvF3aU) med veldig mange fine folk og mange gode (og ofte meget sære) diskusjoner underveis. 
 
@@ -38,7 +40,7 @@ Oslos Nordpolen er en plass med butikker, restauranter, trafikklys og juletresal
 
 Her var det bare å bite tenna sammen og snike seg inn. Vel inne var det lite som tydet på julestemning og lønningsgløgg, men det var nok av mistenkelige typer der. Jeg snoket rundt til de mistenkelige typene sluttet å snakke sammen og i sine stille sinn sikkert tenkte at denne karen burde vi kvitte oss med før nissen kommer. Jeg er en fintfølende person, så jeg enset ganske raskt den endrede stemningen i lokalet og fant ut at jeg burde opptre så normalt som mulig. Det mest naturlige jeg kom på var å spørre om de hadde noen egg? Det ble om mulig enda mer stille i kiosken og uroligheten steg nok et hakk hos de mistenkelige typene. Eller de sydpolare agentene, som jeg nå kalte dem i mitt ikke så veldig stille sinn. Kiosken innehaver (som hadde en nese som så litt ut som et pingvinnebb) kunne nølende fortelle at nei, egg hadde de nok ikke. Men skulle det kanskje være noe annet før jeg gikk. Med trykk på _gikk_. Jeg skjønte at jeg var på sporet av noe, men skjønte også at det var lurest å komme seg ut. Keiserpingvinen hadde jo gitt et kraftig hint om at jeg burde komme meg ut, så jeg grabbet til meg en eske IFA, betalte og gikk ut. 
 
-Om man kan høre lettelsens sukk, så var det den lyden jeg hørte bak meg da jeg gikk ut av fiendens pingvinhule. Jeg hadde unnsluppet, med en pakke IFA som nok hadde ligget der noen år siden inneholdet smakte mer som stein (og dette vet jeg en del om siden jeg spiste en del stein i min barndom). Det var helt tydelig at kiosken var et skalkeskjul for hemmelige operasjoner, for omsetning på IFA-pastiller hadde de ikke.
+Om man kan høre lettelsens sukk, så var det den lyden jeg hørte bak meg da jeg gikk ut av fiendens pingvinhule. Jeg hadde unnsluppet, med en pakke IFA som nok hadde ligget der noen år siden innholdet smakte mer som stein (og dette vet jeg en del om siden jeg spiste en del stein i min barndom). Det var helt tydelig at kiosken var et skalkeskjul for hemmelige operasjoner, for omsetning på IFA-pastiller hadde de ikke.
 
 Men så så jeg det! Rett foran meg var egget! Hoho, at jeg ikke hadde sett det før, men spillet var nok sånn at jeg _først_ måtte innom kiosken for deretter å komme ut i rett vinkel i forhold til plassen og se rett på egget! For et vakkert egg!
 
