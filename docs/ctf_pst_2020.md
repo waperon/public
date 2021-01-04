@@ -397,7 +397,7 @@ Googling etter `complex16u` førte meg til https://github.com/jopohl/urh. Jeg in
 # 8 - ASN.1, del 1
 > Det er viktig med faglig utvikling, også nå i førjulsstria. Dagens tema er ASN.1. Her er litt hjernetrim fra Nissens Kompetansebank™.
 
-Utdelt var en [ASN.1-spesifikasjon](https://en.wikipedia.org/wiki/ASN.1) (konstanten `SPECIFICATION` i Python-koden under), samt en kodet streng som virket være base64-enkodet (variabelen `decoded_bytes` i Python-koden under).
+Utdelt var en [ASN.1-spesifikasjon](https://en.wikipedia.org/wiki/ASN.1) (konstanten `SPECIFICATION` i Python-koden under), samt en kodet streng som virket være base64-enkodet (konstanten `ENCODED` i Python-koden under).
 
 ASN.1 er et standardisert, formelt språk. Det brukes for å representere data på en implementasjonsuavhengig måte (i følge Wikipedia). De online-ressursene jeg fant, f.eks. https://asn1.io/asn1playground/, håndterte ikke koden. Endte til slutt opp med en Python-løsning
 
@@ -423,8 +423,10 @@ Spec DEFINITIONS ::= BEGIN
     }
 END'''
 
-npst = asn1tools.compile_string(SPECIFICATION, 'der')
-decoded_bytes = base64.b64decode('MIIBOTCCATAwggEnMIIBHjCCARUwggEMMIIBAzCB+zCB8zCB6zCB4zCB2zCB0zCByzCBwzCBuzCBszCBqzCBozCBnDCBlDCBjDCBhDB9MHYwbzBoMGEwWjBTMEwwRTA+MDcwMTAqMCMwHDAVMA4wBwUAoQMCAROgAwIBA6EDAgEMogMCAQChAwIBE6ADAgEBoQMCARKkAgUAoQMCARShAwIBDqIDAgEYoQMCAQShAwIBEqEDAgEOoQMCAQ6hAwIBB6IDAgECogMCAQigAwIBAaIDAgENogMCARKiAwIBAKMCBQCiAwIBE6IDAgESogMCAQ+hAwIBEaEDAgEOoQMCAQugAwIBAKIDAgEDoQMCAQyhAwIBFKEDAgESoQMCAQ+gAwIBAaEDAgEMoAMCAQOhAwIBEaEDAgEOogMCAQs=')
+ENCODED = 'MIIBOTCCATAwggEnMIIBHjCCARUwggEMMIIBAzCB+zCB8zCB6zCB4zCB2zCB0zCByzCBwzCBuzCBszCBqzCBozCBnDCBlDCBjDCBhDB9MHYwbzBoMGEwWjBTMEwwRTA+MDcwMTAqMCMwHDAVMA4wBwUAoQMCAROgAwIBA6EDAgEMogMCAQChAwIBE6ADAgEBoQMCARKkAgUAoQMCARShAwIBDqIDAgEYoQMCAQShAwIBEqEDAgEOoQMCAQ6hAwIBB6IDAgECogMCAQigAwIBAaIDAgENogMCARKiAwIBAKMCBQCiAwIBE6IDAgESogMCAQ+hAwIBEaEDAgEOoQMCAQugAwIBAKIDAgEDoQMCAQyhAwIBFKEDAgESoQMCAQ+gAwIBAaEDAgEMoAMCAQOhAwIBEaEDAgEOogMCAQs='
+
+npst = asn1tools.compile_string(SPECIFICATION)
+decoded_bytes = base64.b64decode(ENCODED)
 decoded = npst.decode('Node', decoded_bytes)
 
 
@@ -1083,7 +1085,7 @@ BHOPP skriv_ut
 # 17 - ASN.1, del 2
 > NPST har avlyttet telefonen til en mistenkt etteretningsoffiser fra SPST. Teleoperatøren har oversendt data i henhold til ETSI232-1, men våre systemer klarer ikke å forstå innholdet. Vi mistenker at det er benyttet en svært enkel kode, men våre analytikere sier det er LITE SANNSYNLIG at XMAS er benyttet.
 
-Dagens tema var igjen [ASN.1](https://en.wikipedia.org/wiki/ASN.1), som luke 8. En ny spesifikasjon i dag (konstanten `SPECIFICATION` i Python-koden under), samt en kodet streng som igjen virket være base64-enkodet (variabelen `decoded_bytes` i Python-koden under).
+Dagens tema var igjen [ASN.1](https://en.wikipedia.org/wiki/ASN.1), som luke 8. En ny spesifikasjon i dag (konstanten `SPECIFICATION` i Python-koden under), samt en kodet streng som igjen virket være base64-enkodet (konstanten `ENCODED` i Python-koden under).
 
 Gjenbrukte python-koden fra luke 8, med noen modifikasjoner
 
@@ -1147,8 +1149,10 @@ Spec DEFINITIONS ::= BEGIN
     }
 END'''
 
-npst = asn1tools.compile_string(SPECIFICATION, 'ber')
-decoded_bytes = base64.b64decode('MIIEJaE3MDWgCQYHBAICAAUBDqEJBAdwZW5nd3luogQTAk5PoxAwDqAMMAqgCAQGU0FOVEVMpAUCAwj4k6KCA+ihggPkMIID4DAVoAMKAQCiDqAMBApjS0AET1JBSEAFMBCgAwoBAKIJoAcEBWtSQVYKMBCgAwoBAaIJoAcEBWxBTQoEMCKgAwoBAaIboBkEF2xFVgRAUQRCUUpKQVAESktBBEPnnF0bMBagAwoBAKIPoA0EC25FCARXQQRMQVYKMA6gAwoBAaIHoAUEAxsbBDAfoAMKAQGiGKAWBBRuQUMEV0FWBE1KQ0FKBFBNSkMKBDAboAMKAQCiFKASBBAODg4ODg4ODg4ODg4ODg4OMCigAwoBAaIhoB8EHW5BQwRXQVYERkVWQQQODg4ODg4ODg4ODg4ODg4OMDugAwoBAKI0oDIEMGtNCAROQUMER0tUXQtURVdQQVAEVEVXV0tWQEFQBElNUFAEUkFABEFKBEJBTUgKBDAeoAMKAQCiF6AVBBNmVkUEQEFQBEZIQQRXSEVAQEFQMBGgAwoBAaIKoAgEBk5BQ0FWFjANoAMKAQCiBqAEBAIbGzAdoAMKAQGiFqAUBBJgQVAEQlFKT0FQBE1PT0EKCgowG6ADCgEAohSgEgQQCgoKBFJBSlAESE1QUAQKCjAToAMKAQCiDKAKBAhAHUcXEkdHQjAPoAMKAQGiCKAGBARM54IbMA+gAwoBAKIIoAYEBBJFFxwwD6ADCgEAogigBgQEEBYcFTAPoAMKAQCiCKAGBARGEBxCMA+gAwoBAaIIoAYEBBsbGxswF6ADCgEAohCgDgQMQBUQQEYSHRBARUVBMBugAwoBAaIUoBIEEGxSRQRXQVYETkFDBFTngRkwI6ADCgEAohygGgQYYEFQBFdPRUgEUueCVkEEQUoEUVFNQAoEMCygAwoBAKIloCMEIWZNSkBBV1BWQU9PSkVUVEFKBElNSgRCUUpPQVYETU9PQTAroAMKAQGiJKAiBCBrQwRMUkUEQ0tAUARXT0VIBEBBUARDTuecVkEESUFDGzBPoAMKAQCiSKBGBERgUQRJ54EEUEUESUARBEVSBFFRTUADQUoEV0tJBEhLU0FWR0VXQQRMQVwES0MESEFDQ0EEUE1IBEBBUARSRUpITUNBCjAVoAMKAQGiDqAMBAp3T07nnEpKQVYFMB6gAwoBAaIXoBUEE2BBUARCUUpPQVYETU9PQQQKCgowNKADCgEAoi2gKwQpc0xLS1RXCgRxUU1AQUoEV09RSEhBBFdQRVZQQQRJQUAERx1HDAoKCg0wJaADCgEAoh6gHAQaCgoKBEtDBFdIUVBQQQRJQUAEDAoKCg0QRRcwFaADCgEBog6gDAQKc21qBQRwRU9PCjAYoAMKAQCiEaAPBA1xSkBBVgRLQwRNSkoK')
+ENCODED = 'MIIEJaE3MDWgCQYHBAICAAUBDqEJBAdwZW5nd3luogQTAk5PoxAwDqAMMAqgCAQGU0FOVEVMpAUCAwj4k6KCA+ihggPkMIID4DAVoAMKAQCiDqAMBApjS0AET1JBSEAFMBCgAwoBAKIJoAcEBWtSQVYKMBCgAwoBAaIJoAcEBWxBTQoEMCKgAwoBAaIboBkEF2xFVgRAUQRCUUpKQVAESktBBEPnnF0bMBagAwoBAKIPoA0EC25FCARXQQRMQVYKMA6gAwoBAaIHoAUEAxsbBDAfoAMKAQGiGKAWBBRuQUMEV0FWBE1KQ0FKBFBNSkMKBDAboAMKAQCiFKASBBAODg4ODg4ODg4ODg4ODg4OMCigAwoBAaIhoB8EHW5BQwRXQVYERkVWQQQODg4ODg4ODg4ODg4ODg4OMDugAwoBAKI0oDIEMGtNCAROQUMER0tUXQtURVdQQVAEVEVXV0tWQEFQBElNUFAEUkFABEFKBEJBTUgKBDAeoAMKAQCiF6AVBBNmVkUEQEFQBEZIQQRXSEVAQEFQMBGgAwoBAaIKoAgEBk5BQ0FWFjANoAMKAQCiBqAEBAIbGzAdoAMKAQGiFqAUBBJgQVAEQlFKT0FQBE1PT0EKCgowG6ADCgEAohSgEgQQCgoKBFJBSlAESE1QUAQKCjAToAMKAQCiDKAKBAhAHUcXEkdHQjAPoAMKAQGiCKAGBARM54IbMA+gAwoBAKIIoAYEBBJFFxwwD6ADCgEAogigBgQEEBYcFTAPoAMKAQCiCKAGBARGEBxCMA+gAwoBAaIIoAYEBBsbGxswF6ADCgEAohCgDgQMQBUQQEYSHRBARUVBMBugAwoBAaIUoBIEEGxSRQRXQVYETkFDBFTngRkwI6ADCgEAohygGgQYYEFQBFdPRUgEUueCVkEEQUoEUVFNQAoEMCygAwoBAKIloCMEIWZNSkBBV1BWQU9PSkVUVEFKBElNSgRCUUpPQVYETU9PQTAroAMKAQGiJKAiBCBrQwRMUkUEQ0tAUARXT0VIBEBBUARDTuecVkEESUFDGzBPoAMKAQCiSKBGBERgUQRJ54EEUEUESUARBEVSBFFRTUADQUoEV0tJBEhLU0FWR0VXQQRMQVwES0MESEFDQ0EEUE1IBEBBUARSRUpITUNBCjAVoAMKAQGiDqAMBAp3T07nnEpKQVYFMB6gAwoBAaIXoBUEE2BBUARCUUpPQVYETU9PQQQKCgowNKADCgEAoi2gKwQpc0xLS1RXCgRxUU1AQUoEV09RSEhBBFdQRVZQQQRJQUAERx1HDAoKCg0wJaADCgEAoh6gHAQaCgoKBEtDBFdIUVBQQQRJQUAEDAoKCg0QRRcwFaADCgEBog6gDAQKc21qBQRwRU9PCjAYoAMKAQCiEaAPBA1xSkBBVgRLQwRNSkoK'
+
+npst = asn1tools.compile_string(SPECIFICATION)
+decoded_bytes = base64.b64decode(ENCODED)
 decoded = npst.decode('PS-PDU', decoded_bytes)
 
 
@@ -1588,7 +1592,7 @@ Det var mye prøving og feiling for å få koden rett og mitt første forsøk ga
 
 !["debug"](../pics/pst_24_kvalitetskontroll.png)
 
-I min naivitet trodde jeg at det var tilstrekkelig å bare løse oppgaven for én s.k. "inngangsverdi", og jeg hadde funnet en (23) som ga veldig forutsigbar oppførsel. Den gang ei, koden skulle visstnok fungere for _alle_ inngangsverdier. Etter mye grubling kom jeg fram til at det som ville løse oppgaven var å få sleden inn mot midten og holde den konstant der (`x=127` og `dx=0`) samtidig som nissen falt sakte mot pipa (`dy=1`). Det funka nesten alltid, men det var noen ganger nissen landa for langt mot høyre eller venstre, så måtte legge til spesialbehandling dersom det skjedde. Koden som ga flagget så til slutt slik ut
+I min naivitet trodde jeg at det var tilstrekkelig å bare løse oppgaven for én s.k. "inngangsverdi", og jeg hadde funnet en (23) som ga veldig forutsigbar oppførsel. Den gang ei, koden skulle visstnok fungere for _alle_ inngangsverdier. Etter mye grubling kom jeg fram til at det som ville løse oppgaven var å få sleden inn mot midten (`x=127`) og holde den konstant der (`dx=0`) samtidig som nissen falt sakte mot pipa (`dy=1`). Det funka nesten alltid, men det var noen ganger nissen landa for langt mot høyre eller venstre, så måtte legge til spesialbehandling dersom det skjedde. Koden som ga flagget så til slutt slik ut
 
 ```
 SETT r0,0; slask
@@ -1743,7 +1747,7 @@ Trykket man på `Redd julen` ble det tydeligvis kjørt noen tester på inngangsv
 
 !["redd julen"](../pics/pst_24_redd_jula.png)
 
-Fulgte man URL'en, kom man til en glorete side [Arngren](http://arngren.net/) hadde blitt stolt av og som sa "Gratulerer, du reddet julen! PST{MerryChristmasYaFilthyAlgorithm}". Sjelden har jeg lest noen sannere ord.
+Fulgte man [URL'en](https://npst.no/temmelig-hemmelig/3545c4054b7fb20d387bbdd1f3d2aec8/), kom man til en glorete side [Arngren](http://arngren.net/) hadde blitt stolt av og som sa "Gratulerer, du reddet julen! PST{MerryChristmasYaFilthyAlgorithm}". Sjelden har jeg lest noen sannere ord.
 
 **Løsning: PST{MerryChristmasYaFilthyAlgorithm}**
 
