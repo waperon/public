@@ -210,7 +210,7 @@ Når man kjørte programmet, ble egget gulpet opp.
 Dag 3 hadde også et helt eget easteregg. Det kunne man finne i det siste bildet av lappen som ga svar på den opprinnelige oppgaven.
 
 ```bash
-zsteg 9bab0c0ce96dd35b67aea468624852fb.png
+$ zsteg 9bab0c0ce96dd35b67aea468624852fb.png
 b1,rgb,lsb,xy       .. text: "EGG{MeasureOnceCutTwice}"
 ```
 **Utmerkelse #3: EGG{MeasureOnceCutTwice}**
@@ -236,25 +236,25 @@ Archive:  filer.zip
 `DatoPaaske.csv` inneholdt tilsynelatende de riktige data, men om man kikket nærmere etter, var det en del duplikater og noen som manglet. Hver rad representerte påskeaften for et gitt år. Noen år var duplikater (2020, 2026...) og noen år manglet (2023, 2028, 2034, 2040). Det viste seg å være feil i funksjonen ProcedureDatoPaaske, som regnet år feil. Endte opp med å kjøre opp [MSSQL i Docker](https://hub.docker.com/_/microsoft-mssql-server).
 
 ```bash
-cat DatoPaaske.csv
+$ cat DatoPaaske.csv
 DatoPaaskeId;PaaskeAften;PaaskeFerieUke;Aar;MaalTall
 1;2020-04-11;15;2020;43930
 2;2020-04-11;15;2020;43930
 3;2021-04-03;13;2021;44287
  # fix the wrong function
-sed -i '' 's/YEAR(DATEADD(day, 26 - DATEPART(isoww, @foerste_jan), @foerste_jan));/YEAR(@foerste_jan);/g' dbo.ProcedureDatoPaaske.sql
+$ sed -i '' 's/YEAR(DATEADD(day, 26 - DATEPART(isoww, @foerste_jan), @foerste_jan));/YEAR(@foerste_jan);/g' dbo.ProcedureDatoPaaske.sql
  # run MSSQL via Docker
-docker run --name npstdb -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=strong(!)Password' -p 1433:1433 -d mcr.microsoft.com/mssql/server:2017-latest
+$ docker run --name npstdb -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=strong(!)Password' -p 1433:1433 -d mcr.microsoft.com/mssql/server:2017-latest
  # copy sql files to Docker-container
-for f in *.sql; do docker cp $f npstdb:/; done;
+$ for f in *.sql; do docker cp $f npstdb:/; done;
  # start bash in container
-docker exec -it npstdb /bin/bash
+$ docker exec -it npstdb /bin/bash
  # execute sql scripts to setup database
-/opt/mssql-tools/bin/sqlcmd -i dbo.DatoPaaske.sql -i dbo.FunctionPaaskeAften.sql -i dbo.ProcedureDatoPaaske.sql -S localhost -U sa -P 'strong(!)Password'
+$ /opt/mssql-tools/bin/sqlcmd -i dbo.DatoPaaske.sql -i dbo.FunctionPaaskeAften.sql -i dbo.ProcedureDatoPaaske.sql -S localhost -U sa -P 'strong(!)Password'
  # modify GenererRapport to also sum the correct column
-echo -e "USE [NPSTDB]\nGO\n$(cat GenererRapport.sql)\nselect sum(MaalTall) from DatoPaaske\nGO\n" > rapport_med_rett_db.sql
+$ echo -e "USE [NPSTDB]\nGO\n$(cat GenererRapport.sql)\nselect sum(MaalTall) from DatoPaaske\nGO\n" > rapport_med_rett_db.sql
  # run sql to get flag
-/opt/mssql-tools/bin/sqlcmd -i rapport_med_rett_db.sql -S localhost -U sa -P 'strong(!)Password'
+$ /opt/mssql-tools/bin/sqlcmd -i rapport_med_rett_db.sql -S localhost -U sa -P 'strong(!)Password'
 ```
 Alternativ, manuell løsning: finn dato for påskeaften for de manglende fire årene på [f.eks. Wikipedia](https://en.wikipedia.org/wiki/List_of_dates_for_Easter). Legg til de fire tallene i `MaalTall`-kolonnen i `DatoPaaske.csv` og slett duplikater. Summer deretter tallene i `MaalTall`-kolonnen.
 ```
@@ -279,7 +279,9 @@ Lastet ned innholdet fra CyberChef og åpnet det i Excel og filtrerte på avsend
 **Løsning: PST{879502f267ce7b9913c1d1cf0acaf045}**
 
 Dette virket være et [MD5](https://en.wikipedia.org/wiki/MD5)-hashet passord. Jeg valgte den siste MD5-summen til hver av de fem nevnte brukerne og prøvde også [hashcat](https://hashcat.net/hashcat/) for å finne selve passordet. Det ga dog ingen suksess  
-`hashcat -m 0 -O -r OneRuleToRuleThemAll.rule passwords_md5.txt passordfil.txt`
+```bash
+$ hashcat -m 0 -O -r OneRuleToRuleThemAll.rule passwords_md5.txt passordfil.txt
+```
 
 
 ## Speilegg
@@ -377,7 +379,7 @@ STOPP
 
 Utdelt var en fil, `data.complex16u`, som `file`-kommandoen sa hadde [EBCDIC](https://en.wikipedia.org/wiki/EBCDIC)-data i seg. 
 ```bash
-file data.complex16u
+$ file data.complex16u
 data.complex16u: International EBCDIC text, with very long lines, with no line terminators
 ```
 
@@ -537,7 +539,7 @@ jb $+0x7f
 
 Tok denne koden inn i https://defuse.ca/online-x86-assembler.htm og assemblet den. Resultatet ble `4547477B7838365F6D616368696E455F636F6445727D`. Oversetter man disse hex-tallene til ASCII, får man flagget
 
-```
+```bash
 $ echo 4547477B7838365F6D616368696E455F636F6445727D | xxd -r -p
 EGG{x86_machinE_codEr}
 ```
@@ -870,9 +872,11 @@ Kunne også kjøre denne direkte i slede8 med følgende:
 # 13 - ASCII-art
 > Følgende melding ble tilsendt NPST per faks, og ingen i postmottaket forstår innholdet. Det ser ut som den bruker en eller annen form for hex-enkoding, men selv hex-dekodet gir faksen ingen mening. Klarer du å finne mening i meldingen?
 
-Dersom man myste godt på den tekstfila som var vedlagt, kunne man ane bokstaver der. Åpenbar ASCII-art. Masse mysing til det gjorde vondt i øya ga løsningen. Eventuelt kunne man gjøre `sed -E 's/[12357CEF]/ /g' melding.txt`, som ga løsningen i et mer lettlest format (for den observante, har alle tegn som gjenstår en _lukket sløyfe_ i seg. Slike tegn har kanskje et navn?) :
+Dersom man myste godt på tekstfila som var vedlagt, `melding.txt`, kunne man ane bokstaver der. Åpenbar [ASCII-art](https://en.wikipedia.org/wiki/ASCII_art). Masse mysing til det gjorde vondt i øya ga løsningen. Eventuelt kunne man bruke [sed](https://en.wikipedia.org/wiki/Sed) for å transformere teksten. Dette ga løsningen i et mer lettlest format (for den observante, har alle tegn som gjenstår en _lukket sløyfe_ i seg. Slike tegn har kanskje et navn?) 
 
-```
+```bash
+$ sed -E 's/[12357CEF]/ /g' melding.txt
+
  9004    086B  8A696    40    9664  9   8  D666D   6A8   B   0  B   A         00968  9       6D8    4A0          864B4   8B4B          4BBA  8   0  4664D   9A4   9   B  B   9  D  A
  B   B  A        0     A  4  6      6A  6  6      9   8  6   4  4   9         D      9      9   6  B   8           4    D             4      4B  4  9      4   D  9   9  0   B     0
  8   6  0        B     A     D      A 9 0  D      8   9  6  8   9   A         D      B      9   0  D               4    9             0      D 4 B  0      6   B  A  6   A   9     6
@@ -1296,7 +1300,7 @@ $ curl "https://pingvin.spst.no/.netlify/functions/count?input=8J-Qp_CfkKfwn5Cn8
 
 For moro skyld lagde jeg en one-liner som skriver hele flagget (sleit mest med å få konvertert desimal til ASCII der 🤭). 
 ```bash
-for i in G H I J K L M N O P Q R S T U V W X Y Z a b c d e f g h i j k l; do curl -s "https://pingvin.spst.no/.netlify/functions/count?input=8J-Qp_CfkKfwn5Cn8J-Qp_CfkKfwn5Cn8J-Qp_CfkKfwn5Cn8J-Qp_CfkKfwn5Cn8J-Qp_CfkKfwn5Cn8J-Qp_CfkKfwn5Cn8J-Qp_CfkKfwn5Cn8J-Qp_CfkKfwn5Cn8J-Qp_CfkKfwn5Cn8J-Qp_CfkKfwn5Cn8J-Qp_CfkKcBBgE${i}BAIWAkgfAA" | sed -e 's/{\"svar\":\[\(.*\)\]}/\1/' | xargs -I d awk 'BEGIN{printf "%c", d}'; done
+$ for i in G H I J K L M N O P Q R S T U V W X Y Z a b c d e f g h i j k l; do curl -s "https://pingvin.spst.no/.netlify/functions/count?input=8J-Qp_CfkKfwn5Cn8J-Qp_CfkKfwn5Cn8J-Qp_CfkKfwn5Cn8J-Qp_CfkKfwn5Cn8J-Qp_CfkKfwn5Cn8J-Qp_CfkKfwn5Cn8J-Qp_CfkKfwn5Cn8J-Qp_CfkKfwn5Cn8J-Qp_CfkKfwn5Cn8J-Qp_CfkKfwn5Cn8J-Qp_CfkKcBBgE${i}BAIWAkgfAA" | sed -e 's/{\"svar\":\[\(.*\)\]}/\1/' | xargs -I d awk 'BEGIN{printf "%c", d}'; done
 ```
 
 **Løsning: PST{EveryoneAboardTheNOPESlede8}**
