@@ -17,7 +17,9 @@ Hver dag fikk man en ny oppgave i form av en e-post fra brukeren `Mellomleder` i
 
 Det kom også frem etterhvert at det fantes ekstraoppgaver i årets kalender som lå skjult litt rundt omkring som [easter eggs](https://en.wikipedia.org/wiki/Easter_egg_(media)). Ved å finne disse eggene, fikk man en ekstra stjerne i margen på resultatlisten som ble kontinuerlig oppdatert. Med fasit i hånd, var det totalt 11 egg gjemt litt her og der. Mer om de senere.
 
-Det er veldig mange som er mye bedre enn meg på denne type CTF'er, men det er utrolig lærerikt å prøve seg på de ulike oppgavene. Allikevel litt frustrerende iblant å se at noen løste oppgaven på under 10 min, mens jeg selv brukte maaange timer. Læringsutbyttet kan uansett ingen ta fra oss 😊 Og oppi det hele skal jul forberedes og feires. Det var ikke alltid så lett, men noen ganger må det prioriteres. Så da kom jeg ikke helt i mål på julaften, men dagen etter hadde jeg litt tid og klarte å levere de siste oppgavene. Det var nok en rett prioritering (hilsen familien) 😊
+Det er veldig mange som er mye bedre enn meg på denne type CTF'er, men det er utrolig lærerikt å prøve seg på de ulike oppgavene. Allikevel litt frustrerende iblant å se at noen løste oppgaven på under 10 min, mens jeg selv brukte maaange timer. Læringsutbyttet kan uansett ingen ta fra oss 😊 
+
+Og oppi det hele skal jul forberedes og feires. Det var ikke alltid så lett, men noen ganger må det prioriteres. Så da kom jeg ikke helt i mål på julaften, men dagen etter hadde jeg litt tid og klarte å levere de siste oppgavene. Det var nok en rett prioritering (hilsen familien) 😊
 
 Som året før, var det også dette året en aktiv [Discord-kanal](https://discord.gg/8kvF3aU) med veldig mange fine folk og mange gode (og ofte meget sære) diskusjoner underveis. 
 
@@ -872,7 +874,7 @@ Kunne også kjøre denne direkte i slede8 med følgende:
 # 13 - ASCII-art
 > Følgende melding ble tilsendt NPST per faks, og ingen i postmottaket forstår innholdet. Det ser ut som den bruker en eller annen form for hex-enkoding, men selv hex-dekodet gir faksen ingen mening. Klarer du å finne mening i meldingen?
 
-Dersom man myste godt på tekstfila som var vedlagt, `melding.txt`, kunne man ane bokstaver der. Åpenbar [ASCII-art](https://en.wikipedia.org/wiki/ASCII_art). Masse mysing til det gjorde vondt i øya ga løsningen. Eventuelt kunne man bruke [sed](https://en.wikipedia.org/wiki/Sed) for å transformere teksten. Dette ga løsningen i et mer lettlest format (for den observante, har alle tegn som gjenstår en _lukket sløyfe_ i seg. Slike tegn har kanskje et navn?) 
+Dersom man myste godt på tekstfila som var vedlagt, `melding.txt`, kunne man ane bokstaver der. Åpenbar [ASCII art](https://en.wikipedia.org/wiki/ASCII_art). Masse mysing til det gjorde vondt i øya ga løsningen. Eventuelt kunne man bruke [sed](https://en.wikipedia.org/wiki/Sed) for å transformere teksten. Dette ga løsningen i et mer lettlest format (for den observante har alle tegn som gjenstår en _lukket sløyfe_ i seg. Slike tegn har kanskje et navn?) 
 
 ```bash
 $ sed -E 's/[12357CEF]/ /g' melding.txt
