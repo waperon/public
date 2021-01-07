@@ -1300,7 +1300,7 @@ $ curl "https://pingvin.spst.no/.netlify/functions/count?input=8J-Qp_CfkKfwn5Cn8
 ```
 `80` er ASCII-koden til `P`, så her var vi tydeligvis på rett vei! Da var det bare å fortsette med `SETT r0,7` for å lese neste byte osv. helt til vi fikk ASCII-koden for `}`. Til slutt satt vi igjen med en fin rekke desimaltall, som lot seg [oversette til ASCII][183]. (Etter å ha lest andres løsningsforslag, viste det seg at man ikke trengte ett http-kall per bokstav, men at man kunne få all oppgulp fra kun ett kall. Det hadde vært mer effektivt).
 
-For moro skyld lagde jeg en one-liner som skriver hele flagget (sleit mest med å få konvertert desimal til ASCII der 🤭). 
+For moro skyld lagde jeg en one-liner som skriver hele flagget (sleit mest med å få konvertert desimal til ASCII der 🤭 ). 
 ```bash
 $ for i in G H I J K L M N O P Q R S T U V W X Y Z a b c d e f g h i j k l; do curl -s "https://pingvin.spst.no/.netlify/functions/count?input=8J-Qp_CfkKfwn5Cn8J-Qp_CfkKfwn5Cn8J-Qp_CfkKfwn5Cn8J-Qp_CfkKfwn5Cn8J-Qp_CfkKfwn5Cn8J-Qp_CfkKfwn5Cn8J-Qp_CfkKfwn5Cn8J-Qp_CfkKfwn5Cn8J-Qp_CfkKfwn5Cn8J-Qp_CfkKfwn5Cn8J-Qp_CfkKcBBgE${i}BAIWAkgfAA" | sed -e 's/{\"svar\":\[\(.*\)\]}/\1/' | xargs -I d awk 'BEGIN{printf "%c", d}'; done
 ```
@@ -1490,7 +1490,7 @@ Kan selvsagt også løses i [CyberChef][22].
 
 !["julekort"](../pics/pst_23_julekort.png)
 
-Her kom tankene raskt til steganografi. Ingen skjult tekst lot seg avekke med `zsteg`, men det finnes andre måter å skjule ting i bilder. Det finnes flere verktøy å bruke, f.eks. [ImageMagick](https://imagemagick.org/index.php) eller [StegSolve](http://www.caesum.com/handbook/stego.htm). Jeg foretrekker det sistnevnte siden det er forholdsvis enkelt i bruk. Etter å ha åpnet julekortet i StegSolve viste det seg raskt at det lå ting skjult. Dette bildet lå i [R0](https://en.wikipedia.org/wiki/Channel_(digital_image)):
+Her kom tankene raskt til steganografi. Ingen skjult tekst lot seg avdekke med `zsteg`, men det finnes andre måter å skjule ting i bilder. Det finnes flere verktøy å bruke, f.eks. [ImageMagick](https://imagemagick.org/index.php) eller [StegSolve](http://www.caesum.com/handbook/stego.htm). Jeg foretrekker det sistnevnte siden det er forholdsvis enkelt i bruk. Etter å ha åpnet julekortet i StegSolve viste det seg raskt at det lå ting skjult. Dette bildet lå i [R0](https://en.wikipedia.org/wiki/Channel_(digital_image)):
 
 !["R0"](../pics/pst_23_qr1.bmp)
 
