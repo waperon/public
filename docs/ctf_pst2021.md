@@ -835,7 +835,7 @@ blir det 5, 15, 6, 20. Det var også løsningen
 > Rapporter tilbake med julenissens passord omkranset av PST{ og }, og bruk gjenopprettingsnøkkel hohoho_god_jul.
 
 Med fjorårets krevende julaftenoppgave friskt i minne, var det gledelig at denne oppgaven var av det lettere slaget. 
-Svarene på de tre første spørsmålene var å finne i de tidligere lukene (14 og 23). 
+Svarene på de to første spørsmålene var å finne i de tidligere lukene (14 og 23). 
 Spørsmål 3 er første treff om man googler "grunnskole Svalbard", 
 mens spørsmål 4 var en variant av [semafor-signaler](https://no.wikipedia.org/wiki/Semafor)
 
