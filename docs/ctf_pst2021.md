@@ -12,7 +12,9 @@ Daglig kl 18:00 dukket det opp et nytt oppdrag i en melding i et windowslignende
 oppdragene ble gitt kl 18:00 istedenfor midnatt, samt at mandager var oppdragsfrie. I tillegg var julaftens oppgave relativt lett og ble sluppet på formiddagen, noe som nok førte til at flere rakk å feire
 julaften med god samvittighet.
 
-Alt i alt var det 21 oppgaver som ga 10 poeng hver, samt 5 ekstraoppgaver ("egg"), som ga ett poeng hver. Maks poengsum blir da for den som er skarp i matte, 215.
+Alt i alt var det 21 oppgaver som ga 10 poeng hver, samt 5 ekstraoppgaver ("egg"), som ga ett poeng hver. Maks poengsum blir da for den som er skarp i matte, 215. 
+
+Stor takk til flere folk for god hjelp og samarbeid. Ingen nevnt, ingen glemt. Dere vet hvem dere er 🙏
 
 # 1 Velkommen
 
