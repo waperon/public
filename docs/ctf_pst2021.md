@@ -6,7 +6,7 @@ type: CTF
 link: https://p26e.dev/
 date: 2021-12-24
 ---
-[PST](https://pst.no/) arrangerte også i desember 2021 en [CTF](https://en.wikipedia.org/wiki/Capture_the_flag) med lignende tema som foregående år. Nissen trenger hjelp med alt fra sortering av varelager til hjelp med å avsløre noen skumle agenter. 
+[PST](https://pst.no/) arrangerte også i desember 2021 en [CTF](https://en.wikipedia.org/wiki/Capture_the_flag_(cybersecurity)) med lignende tema som foregående år. Nissen trenger hjelp med alt fra sortering av varelager til hjelp med å avsløre noen skumle agenter. 
 
 Daglig kl 18:00 dukket det opp et nytt oppdrag i en melding i et windowslignende grensesnitt som kalles DASS. Oppgavene har gjerne litt stigende vanskelighetsgrad jo nærmere man kommer julaften. Nytt fra foregående år var at 
 oppdragene ble gitt kl 18:00 istedenfor midnatt, samt at mandager var oppdragsfrie. I tillegg var julaftens oppgave relativt lett og ble sluppet på formiddagen, noe som nok førte til at flere rakk å feire
